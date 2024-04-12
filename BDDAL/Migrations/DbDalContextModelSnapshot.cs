@@ -87,6 +87,12 @@ namespace BDDAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("User1Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("User2Id")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserID1")
                         .HasColumnType("int");
 
@@ -95,9 +101,9 @@ namespace BDDAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserID1");
+                    b.HasIndex("User1Id");
 
-                    b.HasIndex("UserID2");
+                    b.HasIndex("User2Id");
 
                     b.ToTable("Friendships");
                 });
@@ -220,13 +226,13 @@ namespace BDDAL.Migrations
                 {
                     b.HasOne("BazaDanych.User", "User1")
                         .WithMany()
-                        .HasForeignKey("UserID1")
+                        .HasForeignKey("User1Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BazaDanych.User", "User2")
                         .WithMany()
-                        .HasForeignKey("UserID2")
+                        .HasForeignKey("User2Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
