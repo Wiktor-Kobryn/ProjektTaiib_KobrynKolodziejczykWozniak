@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API.csproj", "{E4193B20-4A42-4A82-87B5-04025709F3D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazaDanych", "..\BazaDanych\BazaDanych.csproj", "{BEA4009A-0514-425B-83FA-EFB269829590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDDAL", "..\BDDAL\BDDAL.csproj", "{9FD3221A-CFC7-4710-B5B7-56024B211B48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E4193B20-4A42-4A82-87B5-04025709F3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4193B20-4A42-4A82-87B5-04025709F3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4193B20-4A42-4A82-87B5-04025709F3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA4009A-0514-425B-83FA-EFB269829590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA4009A-0514-425B-83FA-EFB269829590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA4009A-0514-425B-83FA-EFB269829590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA4009A-0514-425B-83FA-EFB269829590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD3221A-CFC7-4710-B5B7-56024B211B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD3221A-CFC7-4710-B5B7-56024B211B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD3221A-CFC7-4710-B5B7-56024B211B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD3221A-CFC7-4710-B5B7-56024B211B48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
