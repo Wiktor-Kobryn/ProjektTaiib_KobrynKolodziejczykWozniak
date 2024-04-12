@@ -19,6 +19,6 @@ namespace BazaDanych
         public string Body { get; set; }
         public DateTime Deadline { get; set; }
         public DateTime CreationTime { get; set; }
-        public bool Sate { get; set; }   
+        public bool State { get; set; }   
     }
 }
