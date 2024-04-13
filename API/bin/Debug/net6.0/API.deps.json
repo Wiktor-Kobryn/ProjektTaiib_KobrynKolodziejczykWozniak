@@ -8,11 +8,12 @@
     ".NETCoreApp,Version=v6.0": {
       "API/1.0.0": {
         "dependencies": {
-          "BDDAL": "1.0.0",
+          "DAL": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.18",
           "Microsoft.EntityFrameworkCore.Design": "7.0.18",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.18",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.18",
+          "Model": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -702,23 +703,23 @@
           }
         }
       },
-      "BazaDanych/1.0.0": {
+      "DAL/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.18",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.18"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.18",
+          "Model": "1.0.0"
         },
         "runtime": {
-          "BazaDanych.dll": {}
+          "DAL.dll": {}
         }
       },
-      "BDDAL/1.0.0": {
+      "Model/1.0.0": {
         "dependencies": {
-          "BazaDanych": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.18",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.18"
         },
         "runtime": {
-          "BDDAL.dll": {}
+          "Model.dll": {}
         }
       }
     }
@@ -1198,12 +1199,12 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "BazaDanych/1.0.0": {
+    "DAL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "BDDAL/1.0.0": {
+    "Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
