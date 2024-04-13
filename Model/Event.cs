@@ -8,7 +8,6 @@ namespace Model
     public enum EventType
     {
         chart, task, activity
-
     }
 
     [Table("EVENTS")]

@@ -22,7 +22,7 @@ namespace Model
 
         public DateTime Deadline { get; set; }
         public DateTime CreationDate { get; set; }
-        public bool State { get; set; } 
+        public bool IsFinished { get; set; } 
         
         public IEnumerable<Comment> Comments { get; set; }
         public IEnumerable<User> Users { get; set; }
