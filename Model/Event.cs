@@ -32,7 +32,7 @@ namespace Model
 
         public EventType Type { get; set; }
 
-        public IEnumerable<EventTask> EventTasks { get; set; }
+        public ICollection<EventTask> EventTasks { get; set; }
 
         public void Configure(EntityTypeBuilder<Event> builder)
         {

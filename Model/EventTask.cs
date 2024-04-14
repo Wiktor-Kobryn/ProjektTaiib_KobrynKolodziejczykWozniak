@@ -24,12 +24,12 @@ namespace Model
         public DateTime CreationDate { get; set; }
         public bool State { get; set; } 
         
-        public IEnumerable<Comment> Comments { get; set; }
-        public IEnumerable<User> Users { get; set; }
+        public ICollection<Comment> Comments { get; set; }
+        public ICollection<User> Users { get; set; }
 
         public void Configure(EntityTypeBuilder<EventTask> builder)
         {
-            builder.HasOne(u => u.Event).WithMany(x => x.EventTasks).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(u => u.Event).WithMany(x => x.EventTasks).OnDelete(DeleteBehavior.Cascade);
         
         }
     }
