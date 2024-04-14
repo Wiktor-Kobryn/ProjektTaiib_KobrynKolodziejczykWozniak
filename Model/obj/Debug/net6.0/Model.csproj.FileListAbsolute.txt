@@ -13,3 +13,17 @@ C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWoz
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.pdb
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.genruntimeconfig.cache
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\ref\Model.dll
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.deps.json
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.runtimeconfig.json
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.dll
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.pdb
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.csproj.AssemblyReference.cache
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.AssemblyInfoInputs.cache
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.AssemblyInfo.cs
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.csproj.CoreCompileInputs.cache
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.dll
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\refint\Model.dll
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.pdb
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.genruntimeconfig.cache
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\ref\Model.dll

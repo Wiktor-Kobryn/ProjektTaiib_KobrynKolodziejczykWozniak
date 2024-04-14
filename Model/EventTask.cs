@@ -13,8 +13,8 @@ namespace Model
         [Key, Column("ID")]
         public int Id { get; set; }
 
-        public int EventId { get; set; }
         [ForeignKey(nameof(EventId))]
+        public int? EventId { get; set; }
         public Event Event { get; set; }
 
         [Required, MaxLength(200)]
@@ -30,6 +30,7 @@ namespace Model
         public void Configure(EntityTypeBuilder<EventTask> builder)
         {
             builder.HasOne(u => u.Event).WithMany(x => x.EventTasks).OnDelete(DeleteBehavior.Restrict);
+        
         }
     }
 }

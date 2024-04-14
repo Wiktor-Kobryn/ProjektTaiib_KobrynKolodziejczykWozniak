@@ -16,7 +16,7 @@ namespace Model
         [MaxLength(50)]
         public string Name { get; set; }
 
-        public int EventId { get; set; }
+        public int? EventId { get; set; }
         [ForeignKey(nameof(EventId))]
         public Event Event { get; set; }
 
