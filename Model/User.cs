@@ -28,10 +28,10 @@ namespace Model
         public bool IsAdmin { get; set; }
         public DateTime CreationDate { get; set; }
 
-        public IEnumerable<Comment> Comments { get; set; }
-        public IEnumerable<EventTask> EventTasks { get; set; }
-        public IEnumerable<Event> Events { get; set; }
-        public IEnumerable<Group> Groups { get; set; }
+        public ICollection<Comment> Comments { get; set; }
+        public ICollection<EventTask> EventTasks { get; set; }
+        public ICollection<Event> Events { get; set; }
+        public ICollection<Group> Groups { get; set; }
         //public IEnumerable<Friendship> Friendships { get; set; }
 
     }

@@ -21,10 +21,10 @@ namespace Model
         public Event Event { get; set; }
 
         [Required]
-        public IEnumerable<User> Users { get; set; }        
+        public ICollection<User> Users { get; set; }        
         public void Configure(EntityTypeBuilder<Group> builder)
         {
-            builder.HasOne(x => x.Event).WithOne(x => x.Group).OnDelete(DeleteBehavior.Restrict);
+           // builder.HasOne(x => x.Event).WithOne(x => x.Group).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
