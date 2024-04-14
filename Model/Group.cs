@@ -20,6 +20,8 @@ namespace Model
         [ForeignKey(nameof(EventId))]
         public Event Event { get; set; }
 
+        [Required]
+        public IEnumerable<User> Users { get; set; }        
         public void Configure(EntityTypeBuilder<Group> builder)
         {
             builder.HasOne(x => x.Event).WithOne(x => x.Group).OnDelete(DeleteBehavior.Restrict);

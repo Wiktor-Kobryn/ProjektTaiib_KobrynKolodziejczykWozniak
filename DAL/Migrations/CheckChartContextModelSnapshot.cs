@@ -37,6 +37,21 @@ namespace DAL.Migrations
                     b.ToTable("EventTaskUser");
                 });
 
+            modelBuilder.Entity("GroupUser", b =>
+                {
+                    b.Property<int>("GroupsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsersId")
+                        .HasColumnType("int");
+
+                    b.HasKey("GroupsId", "UsersId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("GroupUser");
+                });
+
             modelBuilder.Entity("Model.Comment", b =>
                 {
                     b.Property<int>("Id")
@@ -78,7 +93,7 @@ namespace DAL.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("GroupId")
+                    b.Property<int?>("GroupId")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -143,13 +158,17 @@ namespace DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("UserAId")
+                    b.Property<int?>("UserAId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserBId")
+                    b.Property<int?>("UserBId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserAId");
+
+                    b.HasIndex("UserBId");
 
                     b.ToTable("FRIENDSHIPS");
                 });
@@ -233,6 +252,21 @@ namespace DAL.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("GroupUser", b =>
+                {
+                    b.HasOne("Model.Group", null)
+                        .WithMany()
+                        .HasForeignKey("GroupsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Model.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Model.Comment", b =>
                 {
                     b.HasOne("Model.EventTask", "EventTask")
@@ -256,9 +290,7 @@ namespace DAL.Migrations
                 {
                     b.HasOne("Model.Group", "Group")
                         .WithMany()
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupId");
 
                     b.HasOne("Model.User", "User")
                         .WithMany("Events")
@@ -278,6 +310,21 @@ namespace DAL.Migrations
                         .HasForeignKey("EventId");
 
                     b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("Model.Friendship", b =>
+                {
+                    b.HasOne("Model.User", "UserA")
+                        .WithMany()
+                        .HasForeignKey("UserAId");
+
+                    b.HasOne("Model.User", "UserB")
+                        .WithMany()
+                        .HasForeignKey("UserBId");
+
+                    b.Navigation("UserA");
+
+                    b.Navigation("UserB");
                 });
 
             modelBuilder.Entity("Model.Group", b =>

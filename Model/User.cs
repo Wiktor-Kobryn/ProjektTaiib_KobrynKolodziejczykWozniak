@@ -31,5 +31,7 @@ namespace Model
         public IEnumerable<Comment> Comments { get; set; }
         public IEnumerable<EventTask> EventTasks { get; set; }
         public IEnumerable<Event> Events { get; set; }
+        public IEnumerable<Group> Groups { get; set; }
+
     }
 }

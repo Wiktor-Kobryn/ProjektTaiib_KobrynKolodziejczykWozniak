@@ -15,7 +15,9 @@ namespace Model
         public int Id { get; set; }
 
         //warning - FK not mapped!
-        public int UserAId { get; set; }
-        public int UserBId { get; set; }
+        public int? UserAId { get; set; }
+        public User UserA { get; set; }
+        public int? UserBId { get; set; }
+        public User UserB { get; set; }
     }
 }

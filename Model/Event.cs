@@ -24,7 +24,7 @@ namespace Model
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }
 
-        public int GroupId { get; set; }
+        public int? GroupId { get; set; }
         [ForeignKey(nameof(GroupId))]
         public Group Group { get; set; }
 

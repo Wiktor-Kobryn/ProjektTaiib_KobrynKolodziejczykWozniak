@@ -12,20 +12,6 @@ namespace DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "FRIENDSHIPS",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserAId = table.Column<int>(type: "int", nullable: false),
-                    UserBId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FRIENDSHIPS", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "USERS",
                 columns: table => new
                 {
@@ -41,6 +27,30 @@ namespace DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_USERS", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FRIENDSHIPS",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserAId = table.Column<int>(type: "int", nullable: true),
+                    UserBId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FRIENDSHIPS", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_FRIENDSHIPS_USERS_UserAId",
+                        column: x => x.UserAId,
+                        principalTable: "USERS",
+                        principalColumn: "ID");
+                    table.ForeignKey(
+                        name: "FK_FRIENDSHIPS_USERS_UserBId",
+                        column: x => x.UserBId,
+                        principalTable: "USERS",
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(
@@ -113,7 +123,7 @@ namespace DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    GroupId = table.Column<int>(type: "int", nullable: false),
+                    GroupId = table.Column<int>(type: "int", nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false)
                 },
@@ -147,6 +157,30 @@ namespace DAL.Migrations
                         principalColumn: "ID");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "GroupUser",
+                columns: table => new
+                {
+                    GroupsId = table.Column<int>(type: "int", nullable: false),
+                    UsersId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GroupUser", x => new { x.GroupsId, x.UsersId });
+                    table.ForeignKey(
+                        name: "FK_GroupUser_GROUPS_GroupsId",
+                        column: x => x.GroupsId,
+                        principalTable: "GROUPS",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_GroupUser_USERS_UsersId",
+                        column: x => x.UsersId,
+                        principalTable: "USERS",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_COMMENTS_EventTaskId",
                 table: "COMMENTS",
@@ -178,9 +212,24 @@ namespace DAL.Migrations
                 column: "UsersId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FRIENDSHIPS_UserAId",
+                table: "FRIENDSHIPS",
+                column: "UserAId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FRIENDSHIPS_UserBId",
+                table: "FRIENDSHIPS",
+                column: "UserBId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_GROUPS_EventId",
                 table: "GROUPS",
                 column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GroupUser_UsersId",
+                table: "GroupUser",
+                column: "UsersId");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_COMMENTS_EVENT_TASKS_EventTaskId",
@@ -202,8 +251,7 @@ namespace DAL.Migrations
                 table: "EVENTS",
                 column: "GroupId",
                 principalTable: "GROUPS",
-                principalColumn: "ID",
-                onDelete: ReferentialAction.Cascade);
+                principalColumn: "ID");
         }
 
         /// <inheritdoc />
@@ -225,6 +273,9 @@ namespace DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "FRIENDSHIPS");
+
+            migrationBuilder.DropTable(
+                name: "GroupUser");
 
             migrationBuilder.DropTable(
                 name: "EVENT_TASKS");
