@@ -32,6 +32,7 @@ namespace Model
         public IEnumerable<EventTask> EventTasks { get; set; }
         public IEnumerable<Event> Events { get; set; }
         public IEnumerable<Group> Groups { get; set; }
+        public IEnumerable<Friendship> Friendships { get; set; }
 
     }
 }
