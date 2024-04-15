@@ -30,7 +30,6 @@ namespace BLL_EF
                 CreationDate = DateTime.Now,
                 Title = eventRequest.Title,
                 UserId = eventRequest.UserId,
-                GroupId = eventRequest.GroupId,
                 Type = eventRequest.Type
             };
             db.Events.Add(e);

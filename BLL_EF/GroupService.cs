@@ -49,7 +49,8 @@ namespace BLL_EF
             if(group == null)
                 return false;
 
-            //dodawanie
+            
+            group.Users.Add(user);
 
             db.SaveChanges();
             return true;
@@ -100,7 +101,7 @@ namespace BLL_EF
             var user = db.Users.Find(userId);
             if (user == null)
                 throw new Exception("Brak uzytkownika");
-            //zle do zrobienia
+            
             var g = db.Groups.Where(u=>u.Users.Contains(user));
             return ToGroupsResponseDTO(g);
         }

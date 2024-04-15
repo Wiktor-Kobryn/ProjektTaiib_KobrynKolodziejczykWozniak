@@ -21,7 +21,7 @@ namespace Model
         public Event Event { get; set; }
 
         [Required]
-        public ICollection<User> Users { get; set; }
+        public ICollection<User> Users { get; set; } = new List<User>();
         public void Configure(EntityTypeBuilder<Group> builder)
         {
            builder.HasOne(x => x.Event).WithOne(x => x.Group).OnDelete(DeleteBehavior.Restrict);

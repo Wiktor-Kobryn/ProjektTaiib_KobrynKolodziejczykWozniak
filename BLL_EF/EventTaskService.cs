@@ -34,7 +34,7 @@ namespace BLL_EF
                 return false;
 
             ICollection<User> users = new List<User>();
-            users.Append(u);
+            users.Add(u);
 
             EventTask eventTask = new()
             {
@@ -61,7 +61,6 @@ namespace BLL_EF
             if (e == null)
                 return false;
 
-            //tu dodawanie
             e.Users.Add(u);
 
             db.SaveChanges();
@@ -130,12 +129,13 @@ namespace BLL_EF
             var u = db.Users.Find(userId);
             if (u == null)
                 throw new Exception("Brak uzytkownika");
-            //zle, do zrobienia
-            var eventTasks = db.EventTasks.Where(i => i.Users.Contains(u));
+
+            var eventTasks = db.EventTasks.Where(x => x.Users.Contains(u));
+
             return ToEventTaskResponseDTO(eventTasks);
         }
 
-            IEnumerable<EventTaskResponseDTO> ToEventTaskResponseDTO(IEnumerable<EventTask> eventTasks)
+        IEnumerable<EventTaskResponseDTO> ToEventTaskResponseDTO(IEnumerable<EventTask> eventTasks)
         {
             List<EventTaskResponseDTO> eventTaskResponseDTOs = new();
             foreach(var eventTask in eventTasks)

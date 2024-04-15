@@ -25,7 +25,7 @@ namespace Model
         public bool State { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
-        public ICollection<User> Users { get; set; }
+        public ICollection<User> Users { get; set; } = new List<User>();
 
         public void Configure(EntityTypeBuilder<EventTask> builder)
         {
