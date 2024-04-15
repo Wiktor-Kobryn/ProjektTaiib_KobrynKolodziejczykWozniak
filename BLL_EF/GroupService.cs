@@ -5,6 +5,7 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -74,6 +75,11 @@ namespace BLL_EF
             if (group == null)
                 return false;
 
+            var e = db.Events.Find(group.EventId);
+            if (e == null)
+                return false;
+            e.GroupId = null;
+            db.SaveChanges();
             db.Groups.Remove(group);
             db.SaveChanges();
             return true;

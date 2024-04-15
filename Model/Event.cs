@@ -36,7 +36,7 @@ namespace Model
         public void Configure(EntityTypeBuilder<Event> builder)
         {
             builder.HasOne(x => x.User).WithMany(x => x.Events).OnDelete(DeleteBehavior.Cascade);
-           // builder.HasOne(x => x.Group).WithOne(x => x.Event).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.Group).WithOne(x => x.Event).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
