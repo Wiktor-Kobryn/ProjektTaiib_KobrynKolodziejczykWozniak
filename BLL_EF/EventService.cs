@@ -71,7 +71,7 @@ namespace BLL_EF
 
             var g = db.Groups.Find(e.GroupId);
             if (g != null) db.Groups.Remove(g);
-
+            db.SaveChanges();
             db.Events.Remove(e);
             db.SaveChanges();
             return true;

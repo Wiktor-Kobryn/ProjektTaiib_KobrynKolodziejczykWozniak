@@ -3276,11 +3276,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\API\\API.csproj",
+      "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Kuba\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\API\\obj\\",
+      "outputPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3301,17 +3301,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\BLL\\BLL.csproj"
+            "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\BLL_EF\\BLL_EF.csproj": {
-              "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\BLL_EF\\BLL_EF.csproj"
+            "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj": {
+              "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj"
             },
-            "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\DAL\\DAL.csproj"
+            "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\Model\\Model.csproj"
+            "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
             }
           }
         }
