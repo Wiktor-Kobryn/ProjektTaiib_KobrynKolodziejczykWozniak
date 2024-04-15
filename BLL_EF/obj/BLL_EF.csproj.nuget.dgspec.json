@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj": {}
+    "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj": {
+    "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj",
+        "projectUniqueName": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\Kuba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\obj\\",
+        "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\Karol\\.nuget\\packages\\",
+        "outputPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Karol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
+              "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
+                "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
               }
             }
           }
@@ -53,8 +49,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,25 +58,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj": {
+    "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj",
+        "projectUniqueName": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj",
         "projectName": "BLL_EF",
-        "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj",
-        "packagesPath": "C:\\Users\\Kuba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\obj\\",
+        "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj",
+        "packagesPath": "C:\\Users\\Karol\\.nuget\\packages\\",
+        "outputPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Karol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -95,14 +86,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj": {
-                "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj"
+              "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj": {
+                "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj"
               },
-              "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj"
+              "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {
+                "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
+              "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
+                "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
               }
             }
           }
@@ -122,8 +113,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -132,25 +122,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {
+    "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj",
+        "projectUniqueName": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Kuba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\obj\\",
+        "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Karol\\.nuget\\packages\\",
+        "outputPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Karol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,8 +150,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
+              "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
+                "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
               }
             }
           }
@@ -207,8 +193,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -217,25 +202,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
+    "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj",
+        "projectUniqueName": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\Kuba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\obj\\",
+        "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\Karol\\.nuget\\packages\\",
+        "outputPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Karol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -288,8 +269,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -298,7 +278,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
