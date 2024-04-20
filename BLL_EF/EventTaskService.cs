@@ -135,6 +135,33 @@ namespace BLL_EF
             return ToEventTaskResponseDTO(eventTasks);
         }
 
+        public IEnumerable<CommentResponseDTO> GetEventTaskComment(int eventTaskId)
+        {
+            var e = db.EventTasks.Find(eventTaskId);
+            if (e == null)
+                throw new Exception("Brak tasku");
+
+            var coms = db.Comments.Where(i => i.EventTaskId == eventTaskId).ToList();
+            return ToCommentResponseDTO(coms);
+        }
+
+        IEnumerable<CommentResponseDTO> ToCommentResponseDTO(List<Comment> comments)
+        {
+            List<CommentResponseDTO> result = new List<CommentResponseDTO>();
+            foreach (var comment in comments)
+            {
+                var c = new CommentResponseDTO
+                {
+                    Id = comment.Id,
+                    EventTaskId = comment.EventTaskId,
+                    Body = comment.Body,
+                    UserId = comment.UserId,
+                };
+                result.Add(c);
+            }
+            return result;
+        }
+
         IEnumerable<EventTaskResponseDTO> ToEventTaskResponseDTO(IEnumerable<EventTask> eventTasks)
         {
             List<EventTaskResponseDTO> eventTaskResponseDTOs = new();

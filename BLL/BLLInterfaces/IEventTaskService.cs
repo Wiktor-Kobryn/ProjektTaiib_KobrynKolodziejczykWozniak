@@ -16,5 +16,6 @@ namespace BLL.BLLInterfaces
         bool FinishEventTask(int eventTaskId);
         IEnumerable<EventTaskResponseDTO> GetUserEventTasks(int userId);
         IEnumerable<EventTaskResponseDTO> GetEventEventTasks(int eventId);
+        IEnumerable<CommentResponseDTO> GetEventTaskComment(int eventTaskId);
     }
 }
