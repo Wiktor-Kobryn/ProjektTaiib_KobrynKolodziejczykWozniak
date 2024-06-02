@@ -46,13 +46,13 @@ namespace API.Controllers
             eventTaskService.FinishEventTask(id);
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("user/{userId}")]
         public IEnumerable<EventTaskResponseDTO> GetUserEventTasks(int userId)
         {
             return eventTaskService.GetUserEventTasks(userId);
         }
 
-        [HttpGet("{eventId}")]
+        [HttpGet("event/{eventId}")]
         public IEnumerable<EventTaskResponseDTO> GetEventEventTasks(int eventId)
         {
             return eventTaskService.GetEventEventTasks(eventId);

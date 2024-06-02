@@ -38,13 +38,13 @@ namespace API.Controllers
             groupService.AddUserToAGroup(userId, groupId);
         }
 
-        [HttpGet("{eventId}")]
+        [HttpGet("event/{eventId}")]
         public GroupResponseDTO GetEventGroup(int eventId) 
         { 
             return groupService.GetEventGroup(eventId);
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("user/{userId}")]
         public IEnumerable<GroupResponseDTO> GetUserGroups(int userId)
         {
             return groupService.GetUserGroups(userId);

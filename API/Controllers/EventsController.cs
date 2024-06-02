@@ -34,13 +34,13 @@ namespace API.Controllers
             eventService.DeleteEvent(id);
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("user/{userId}")]
         public IEnumerable<EventResponseDTO> GetUserEvents(int userId)
         {
             return eventService.GetUserEvents(userId);
         }
 
-        [HttpGet("{groupId}")]
+        [HttpGet("group/{groupId}")]
         public EventResponseDTO GetGroupEvent(int groupId)
         {
             return eventService.GetGroupEvent(groupId);

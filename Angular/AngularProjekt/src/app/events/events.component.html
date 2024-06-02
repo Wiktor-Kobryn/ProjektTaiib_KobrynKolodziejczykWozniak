@@ -1,0 +1,37 @@
+<div *ngFor="let e of events" class="grid-container">
+    <div class="grid-item">
+        {{ e.title }}<br/>
+        {{ getEventTypeText(e.type) }}<br/>
+        {{ e.creationDate | date:'dd-MM-yyyy' }}<br/>
+    </div>
+</div>
+
+<br/><br/><br/>
+
+Add New Event
+<form #productForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="title">Title</label>
+        <input 
+            type="text"
+            id="title"
+            name="title"
+            [(ngModel)]="eventRequest.title"
+            required
+            >
+    </div>
+    <div>
+        <label for="type">Type</label>
+        <select id="type" name="type" [(ngModel)]="eventRequest.type" required>
+            <option [value]="0">Chart</option>
+            <option [value]="1">Task</option>
+            <option [value]="2">Activity</option>
+        </select>
+        <p>Selected type: {{ eventRequest.type }}</p>
+    </div>
+    <input 
+    type="submit" 
+    name="add" 
+    id="add" 
+    value="Add" >
+</form>
