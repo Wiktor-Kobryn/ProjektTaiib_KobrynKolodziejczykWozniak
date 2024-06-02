@@ -1,0 +1,14 @@
+<div *ngFor="let e of eventTasks" class="grid-container">
+    <div class="grid-item" (click)="getComments(e.id)">
+        {{ e.body }}<br/>
+        {{ e.deadline | date:'dd-MM-yyyy' }}<br/>
+        {{ e.isFinished }}<br/>
+        {{ e.creationDate | date:'dd-MM-yyyy'}}<br/>
+        <p>Comments:</p>
+        <div *ngFor="let c of comments">
+            <div>
+                {{c.userId}}: {{c.body}}
+            </div>
+        </div>
+    </div>
+</div>

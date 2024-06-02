@@ -3,6 +3,7 @@
         {{ e.title }}<br/>
         {{ getEventTypeText(e.type) }}<br/>
         {{ e.creationDate | date:'dd-MM-yyyy' }}<br/>
+        <input type="button" id="details" name="details" value="Details" (click)="navigateToDetails(e.id)"/>
     </div>
 </div>
 
@@ -27,7 +28,6 @@ Add New Event
             <option [value]="1">Task</option>
             <option [value]="2">Activity</option>
         </select>
-        <p>Selected type: {{ eventRequest.type }}</p>
     </div>
     <input 
     type="submit" 

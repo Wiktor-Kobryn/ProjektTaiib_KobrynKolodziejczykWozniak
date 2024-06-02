@@ -97,4 +97,8 @@ export class EventsComponent {
       error: (err) => console.log(err)
     })
   }
+
+  public navigateToDetails(eventId: number): void{
+    this.router.navigate(['/event/', eventId])
+  }
 }
