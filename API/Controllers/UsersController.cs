@@ -44,5 +44,29 @@ namespace API.Controllers
         {
             return userService.GetUsersByName(name);
         }
+
+        [HttpGet("{id}")]
+        public UserResponseDTO GetUser(int id)
+        {
+            return userService.GetUser(id);
+        }
+
+        [HttpGet("event/{id}")]
+        public UserResponseDTO GetUserByEvent(int id)
+        {
+            return userService.GetUser(id);
+        }
+
+        [HttpGet("group/{groupId}")]
+        public IEnumerable<UserResponseDTO> GetGroupUsers(int groupId)
+        {
+            return userService.GetGroupUsers(groupId);
+        }
+
+        [HttpGet("eventTask/{eventTaskId}")]
+        public IEnumerable<UserResponseDTO> GetEventTaskContributors(int eventTaskId)
+        {
+            return userService.GetEventTaskContributors(eventTaskId);
+        }
     }
 }

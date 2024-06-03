@@ -14,5 +14,6 @@ namespace BLL.BLLInterfaces
         bool DeleteEvent(int eventId);
         IEnumerable<EventResponseDTO> GetUserEvents(int userId);
         EventResponseDTO GetGroupEvent(int groupId);
+        EventResponseDTO GetEvent(int eventId);
     }
 }

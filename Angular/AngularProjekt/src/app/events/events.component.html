@@ -4,6 +4,7 @@
         {{ getEventTypeText(e.type) }}<br/>
         {{ e.creationDate | date:'dd-MM-yyyy' }}<br/>
         <input type="button" id="details" name="details" value="Details" (click)="navigateToDetails(e.id)"/>
+        <input *ngIf="isOwner(e.id, 1)" type="button" id="remove" name="remove" value="Remove" (click)="removeEvent(e.id)"/>
     </div>
 </div>
 

@@ -22,4 +22,12 @@ export class EventsService {
   public add(event: EventRequestDTO): Observable<void>{
     return this.httpClient.post<void>('http://localhost:5171/api/Events', event);
   }
+
+  public delete(eventid: number): Observable<void>{
+    return this.httpClient.delete<void>(`http://localhost:5171/api/Events/${eventid}`);
+  }
+
+  public getEvent(eventId: number): Observable<EventResponseDTO>{
+      return this.httpClient.get<EventResponseDTO>(`http://localhost:5171/api/Events/${eventId}`)
+  }
 }

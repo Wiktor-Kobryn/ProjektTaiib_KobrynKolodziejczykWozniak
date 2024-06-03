@@ -7,12 +7,14 @@ import { EventsComponent } from './events/events.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { EventTaskAddComponent } from './event-task-add/event-task-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    EventTaskAddComponent
   ],
   imports: [
     BrowserModule,

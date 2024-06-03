@@ -50,7 +50,6 @@ export class EventsComponent {
           }
       });
       this.events = Array.from(eventsMap.values());
-      console.log(this.events); 
   });
   }
 
@@ -99,6 +98,23 @@ export class EventsComponent {
   }
 
   public navigateToDetails(eventId: number): void{
-    this.router.navigate(['/event/', eventId])
+    this.router.navigate(['/event/', eventId]);
+  }
+
+  public isOwner(eventId: number, userId: number): boolean
+  {
+    var x = this.events.find(e=> e.id==eventId);
+    if(x?.userId==userId) return true;
+    else return false;
+  }
+
+  public removeEvent(eventId: number): void
+  {
+    this.eventsService.delete(eventId).subscribe({
+      next: () => {
+        this.getEvents();
+      },
+      error: (err) => console.log(err)
+    });
   }
 }

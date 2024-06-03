@@ -13,4 +13,8 @@ export class GroupsService {
   public getUserGroups(userId: number): Observable<GroupResponseDTO[]> {
     return this.httpClient.get<GroupResponseDTO[]>(`http://localhost:5171/api/Groups/user/${userId}`)
   }
+
+  public getEventGroup(eventId: number): Observable<GroupResponseDTO> {
+    return this.httpClient.get<GroupResponseDTO>(`http://localhost:5171/api/Groups/event/${eventId}`)
+  }
 }

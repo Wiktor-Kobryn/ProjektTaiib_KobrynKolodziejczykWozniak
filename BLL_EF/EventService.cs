@@ -96,6 +96,14 @@ namespace BLL_EF
             return ToEventsResponseDTO(events);
         }
 
+        public EventResponseDTO GetEvent(int eventId) 
+        { 
+            var e = db.Events.FirstOrDefault(e => e.Id == eventId);
+            if (e == null)
+                throw new Exception("Brak eventu");
+            return ToEventResponseDTO(e);
+        }
+
         EventResponseDTO ToEventResponseDTO(Event ev)
         {
             EventResponseDTO eventResponseDTO = new()

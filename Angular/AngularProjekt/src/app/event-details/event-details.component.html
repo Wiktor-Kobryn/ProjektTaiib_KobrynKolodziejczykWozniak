@@ -1,14 +1,74 @@
-<div *ngFor="let e of eventTasks" class="grid-container">
-    <div class="grid-item" (click)="getComments(e.id)">
-        {{ e.body }}<br/>
-        {{ e.deadline | date:'dd-MM-yyyy' }}<br/>
-        {{ e.isFinished }}<br/>
-        {{ e.creationDate | date:'dd-MM-yyyy'}}<br/>
-        <p>Comments:</p>
-        <div *ngFor="let c of comments">
-            <div>
-                {{c.userId}}: {{c.body}}
-            </div>
+<div *ngIf="creator" class="creator">
+    <div class="creator-title">
+        Creator:
+    </div> 
+    <div class="creator-background">
+        <div class="creator-image">
+            <img [src]="creator.image"alt="Creator avatar">
+        </div>
+        <div class="creator-name">
+           {{creator.name}}
         </div>
     </div>
 </div>
+
+<div class="main-task-container">
+    <div class="centered-task-container">
+        <div *ngIf="event" class="task-title" >
+            {{event.title}}
+        </div>
+        <div *ngFor="let e of eventTasks" class="task-container">
+            <div class="task-item">
+                <div class="task-status" [ngClass]="{'open': !e.isFinished, 'completed': e.isFinished}"></div>
+                <div class="task-body">
+                    {{ e.body }}
+                </div>
+                <div class="task-date">
+                    &lt; Deadline: {{ e.deadline | date:'dd.MM.yyyy HH:mm' }}
+                </div>
+                <div class="task-users">
+                    <div *ngFor="let c of eventTaskContributors.get(e.id)" class="task-contributors">
+                        <div class="task-contributors-image">
+                        <img [src]="c.image" alt="User avatar">
+                        </div>
+                    </div>
+                </div>
+                <div class="task-add-contributors">
+                    <input type="button" id="addTask" name="addTask" value="+" (click)="addTask()">
+                </div>
+            </div>
+            <div class="comments-section">
+                <div *ngFor="let c of commentsMap.get(e.id)" class="comment">
+                    <div class="comment-user">
+                        <img [src]="getUserAvatar(c.userId)" alt="User avatar">
+                    </div>
+                    <div class="comment-body">
+                       : {{c.body}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-add">
+        <label for="addTask">ADD TASK</label>
+        <input *ngIf="isCreator() && creator" type="button" id="addTask" name="addTask" value="+" (click)="addTask()">
+    </div>
+</div>
+
+
+<div class="contributors">
+    <div class="contributors-title">
+        Contributors:
+    </div> 
+    <div class="contributors-background">
+        <div *ngFor="let c of contributors">
+            <div class="contributors-image">
+                <img [src]="c.image" alt="Contributor avatar">
+            </div>
+        </div>
+        <div class="contributors-add">
+            <input *ngIf="isCreator() && creator" type="button" id="addContributor" name="addContributor" value="+" (click)="addContributor()"/>
+        </div>
+    </div>
+</div>
+

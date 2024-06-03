@@ -75,21 +75,67 @@ namespace BLL_EF
 
                 var user = db.Users.FirstOrDefault(u => u.Id == friendId);
                 if (user != null)
-                {
-                    var e = new UserResponseDTO
-                    {
-                        Id = user.Id,
-                        Login = user.Login,
-                        Name = user.Name,
-                        Image = user.Image,
-                        CreationDate = user.CreationDate,
-                        IsAdmin = user.IsAdmin
-                    };
-                    userResponseDTOs.Add(e);
-                }
+                    userResponseDTOs.Add(ToUserResponseDTO(user));
+
             }
 
             return userResponseDTOs;
+        }
+
+        public UserResponseDTO GetUser(int userId)
+        {
+            var userResponseDTO = new UserResponseDTO();
+            var user = db.Users.FirstOrDefault(u=> u.Id == userId);
+            if(user != null)
+                userResponseDTO = ToUserResponseDTO(user);
+            return userResponseDTO;
+        }
+
+        public UserResponseDTO GetUserByEvent(int eventId)
+        {
+            var userResponseDTO = new UserResponseDTO();
+            var ev = db.Events.FirstOrDefault(e => e.Id == eventId);
+            if(ev != null)
+            {
+                var user = db.Users.FirstOrDefault(u => u.Id == ev.UserId);
+                if (user != null)
+                    userResponseDTO = ToUserResponseDTO(user);
+            }         
+            return userResponseDTO;
+        }
+
+        public IEnumerable<UserResponseDTO> GetGroupUsers(int groupId)
+        {
+            List<User> users = new List<User>();
+            var group = db.Groups.FirstOrDefault(g => g.Id == groupId);
+            if (group != null)
+            {
+                users = db.Users.Where(g=>g.Groups.Contains(group)).ToList();
+            }
+            return ToUsersResponseDTO(users); 
+        }
+
+        public IEnumerable<UserResponseDTO> GetEventTaskContributors(int eventTaskId)
+        {
+            List<User> users = new List<User>();
+            var eventTask = db.EventTasks.FirstOrDefault(e => e.Id == eventTaskId);
+            if(eventTask != null)
+                users = db.Users.Where(e => e.EventTasks.Contains(eventTask)).ToList();
+            return ToUsersResponseDTO(users);
+        }
+
+        UserResponseDTO ToUserResponseDTO(User user)
+        {
+            UserResponseDTO userResponseDTO = new UserResponseDTO
+            {
+                Id = user.Id,
+                Login = user.Login,
+                Name = user.Name,
+                Image = user.Image,
+                CreationDate = user.CreationDate,
+                IsAdmin = user.IsAdmin
+            };
+            return userResponseDTO;
         }
 
         IEnumerable<UserResponseDTO> ToUsersResponseDTO(IEnumerable<User> users)
@@ -97,16 +143,7 @@ namespace BLL_EF
             List<UserResponseDTO> userResponseDTOs = new();
             foreach (var user in users)
             {
-                var e = new UserResponseDTO
-                {
-                    Id = user.Id,
-                    Login = user.Login,
-                    Name = user.Name,
-                    Image = user.Image,
-                    CreationDate = user.CreationDate,
-                    IsAdmin = user.IsAdmin
-                };
-                userResponseDTOs.Add(e);
+                userResponseDTOs.Add(ToUserResponseDTO(user));
             }
             return userResponseDTOs;
         }

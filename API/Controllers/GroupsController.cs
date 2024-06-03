@@ -14,10 +14,10 @@ namespace API.Controllers
         {
             this.groupService = groupService;
         }
-        [HttpPost]
-        public void AddGroup([FromBody] GroupRequestDTO groupRequest)
+        [HttpPost("creator/{creatorId}")]
+        public void AddGroup([FromBody] GroupRequestDTO groupRequest, int creatorId)
         {
-            groupService.AddGroup(groupRequest);
+            groupService.AddGroup(groupRequest, creatorId);
         }
 
         [HttpPut("ChangeName/{id}")]

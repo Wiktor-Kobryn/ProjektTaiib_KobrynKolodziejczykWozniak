@@ -46,5 +46,10 @@ namespace API.Controllers
             return eventService.GetGroupEvent(groupId);
         }
 
+        [HttpGet("{eventId}")]
+        public EventResponseDTO GetEvent(int eventId)
+        {
+            return eventService.GetEvent(eventId);
+        }
     }
 }
