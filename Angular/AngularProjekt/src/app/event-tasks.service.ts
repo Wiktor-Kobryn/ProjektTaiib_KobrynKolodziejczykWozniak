@@ -23,4 +23,8 @@ export class EventTasksService {
   public addTask(userId: number, eventask: EventTaskRequestDTO): Observable<void>{
     return this.httpClient.post<void>(`http://localhost:5171/api/EventTasks/${userId}`, eventask);
   }
+
+  public addUserToEventTask(userId: number, eventTaskId: number): Observable<void>{
+    return this.httpClient.post<void>(`http://localhost:5171/api/EventTasks/${userId}/${eventTaskId}`, null);
+  }
 }

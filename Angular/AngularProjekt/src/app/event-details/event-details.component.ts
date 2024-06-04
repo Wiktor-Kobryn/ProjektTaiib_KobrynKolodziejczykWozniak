@@ -9,6 +9,11 @@ import { UserResponseDTO } from '../model/user.interface';
 import { GroupsService } from '../groups.service';
 import { GroupResponseDTO } from '../model/group.interface';
 import { EventsService } from '../events.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EventTaskContributorAddDialogComponent } from '../event-task-contributor-add-dialog/event-task-contributor-add-dialog.component';
+import { DatePipe, formatDate } from '@angular/common';
+import { CommentService } from '../comment.service';
+import { CommentRequestDTO } from '../model/commentRequest.interface';
 
 @Component({
   selector: 'app-event-details',
@@ -16,16 +21,20 @@ import { EventsService } from '../events.service';
   styleUrl: './event-details.component.css'
 })
 export class EventDetailsComponent {
-  public event!: EventResponseDTO ;
+  public event!: EventResponseDTO;
   public eventTasks: EventTaskResponseDTO[] = [];
   public commentsMap = new Map<number, CommentResponseDTO[]>();
   public eventTaskContributors = new Map<number, UserResponseDTO[]>();
   public creator!: UserResponseDTO;
   public group!: GroupResponseDTO;
   public contributors: UserResponseDTO[] = [];
+  public isCommentIconClicked: boolean = false;
+  public choosedId: number = -1;
+  public isEditorMode: boolean = false;
+  commentText: string = '';
 
   constructor(private route: ActivatedRoute, private userService: UserService, private eventTasksService: EventTasksService,
-    private groupService: GroupsService, private eventService: EventsService, private router: Router) {
+    private groupService: GroupsService, private eventService: EventsService,private commentService: CommentService, private router: Router, private dialog: MatDialog) {
     const eventId = route.snapshot.paramMap.get('eventId');
     if (eventId !== null) {
       eventTasksService.getEventEventTasks(parseInt(eventId)).subscribe({
@@ -42,7 +51,7 @@ export class EventDetailsComponent {
     }
   }
 
-  public getEvent(eventId: number): void{
+  public getEvent(eventId: number): void {
     this.eventService.getEvent(eventId).subscribe({
       next: (res) => {
         this.event = res;
@@ -114,7 +123,77 @@ export class EventDetailsComponent {
     return this.contributors.find(c => c.id == userId)?.image;
   }
 
-  public addContributor() {
+  public addContributorToTask(eventTaskId: number, eventTaskTitle: string): void {
+    var x = this.dialog.open(EventTaskContributorAddDialogComponent, {
+      data: this.contributors
+    });
+    x.afterClosed().subscribe(
+      res => {
+        if (res != null) {
+          console.log(res);
+          this.eventTasksService.addUserToEventTask(res, eventTaskId).subscribe({
+            next: () => {
+              this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+                this.router.navigate(['/event/', this.event.id]);
+              })
+            },
+            error: (err) => console.log(err)
+          })
+        }
+      }
+    )
+
+  }
+
+  public isOverDeadline(event: EventTaskResponseDTO): boolean {
+    if(event.isFinished) return false;
+    const currentTime = new Date();
+    const deadline = new Date(event.deadline);
+    return deadline.getTime() < currentTime.getTime();
+  }
+
+  public showCommentInput(eventTaskId: number): void{
+    this.isCommentIconClicked= !this.isCommentIconClicked;
+    this.choosedId = eventTaskId;
+  }
+  public commentRequest!: CommentRequestDTO;
+  
+  public addCommentToTask(eventTaskId: number, commentText: string): void{
+    console.log(this.commentText);
+    if(this.commentText!=''){ 
+      this.commentRequest = {
+        userId: 1,
+        eventTaskId: eventTaskId,
+        body: this.commentText
+      }
+      
+      this.commentService.add(this.commentRequest).subscribe({
+        next: () => {
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/event/', this.event.id]);
+          })
+        }
+      })
+    }
+  }
+
+  public summary(): number[]{
+    var numbers: number[] = [0,0,0];
+    this.eventTasks.forEach(event => {
+      if(event.isFinished) numbers[1]++;
+      else{
+        if(this.isOverDeadline(event)) numbers[2]++;
+        else numbers[0]++;
+      }
+    });
+    return numbers;
+  }
+
+  public toggleMode(): void {
+    this.isEditorMode = !this.isEditorMode;
+  }
+
+  public addContributor(): void {
 
   }
 

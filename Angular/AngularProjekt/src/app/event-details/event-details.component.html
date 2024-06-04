@@ -19,7 +19,7 @@
         </div>
         <div *ngFor="let e of eventTasks" class="task-container">
             <div class="task-item">
-                <div class="task-status" [ngClass]="{'open': !e.isFinished, 'completed': e.isFinished}"></div>
+                <div class="task-status" [ngClass]="{'open': !e.isFinished, 'completed': e.isFinished, 'overDeadline': isOverDeadline(e)}"></div>
                 <div class="task-body">
                     {{ e.body }}
                 </div>
@@ -33,9 +33,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="task-add-contributors">
-                    <input type="button" id="addTask" name="addTask" value="+" (click)="addTask()">
+                <div *ngIf="isEditorMode" class="task-add-contributors">
+                    <input type="button" id="addTask" name="addTask" value="+" (click)="addContributorToTask(e.id, e.body)">
                 </div>
+                <div class="task-add-comment">
+                    <button mat-icon-button (click)="showCommentInput(e.id)">
+                        <mat-icon>comment</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="isCommentIconClicked && choosedId==e.id" class="add-comment">
+                <form class="comment-form">
+                    <mat-form-field class="comment-form-field">
+                        <mat-label>Leave a comment</mat-label>
+                        <textarea matInput placeholder="Add comment" class="comment-textarea" [(ngModel)]="commentText" name="commentText"></textarea>
+                        <button matSuffix mat-icon-button (click)="addCommentToTask(e.id, commentText)">
+                            <mat-icon>send</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </form>
             </div>
             <div class="comments-section">
                 <div *ngFor="let c of commentsMap.get(e.id)" class="comment">
@@ -58,7 +74,7 @@
 
 <div class="contributors">
     <div class="contributors-title">
-        Contributors:
+        <mat-icon>group</mat-icon>Contributors:
     </div> 
     <div class="contributors-background">
         <div *ngFor="let c of contributors">
@@ -66,9 +82,30 @@
                 <img [src]="c.image" alt="Contributor avatar">
             </div>
         </div>
-        <div class="contributors-add">
+        <div *ngIf="isEditorMode" class="contributors-add">
             <input *ngIf="isCreator() && creator" type="button" id="addContributor" name="addContributor" value="+" (click)="addContributor()"/>
         </div>
     </div>
 </div>
 
+<div class="summary">
+    <div class="summary-title">
+        Summary<mat-icon>trending_up</mat-icon>
+    </div> 
+    <div class="summary-background">
+        <div class="summary-headers">
+            <div>Unfinished</div>
+            <div>Finished</div>
+            <div>Overdue</div>
+        </div>
+        <div class="summary-values">
+            <div>{{summary().at(0)}}</div>
+            <div>{{summary().at(1)}}</div>
+            <div>{{summary().at(2)}}</div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isCreator" class="editorButton"> 
+    <button mat-flat-button (click)="toggleMode()">{{ isEditorMode ? 'Normal mode' : 'Editor mode' }}</button>
+</div>

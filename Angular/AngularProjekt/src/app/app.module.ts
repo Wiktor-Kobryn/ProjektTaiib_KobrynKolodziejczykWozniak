@@ -8,21 +8,35 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventTaskAddComponent } from './event-task-add/event-task-add.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EventTaskContributorAddDialogComponent } from './event-task-contributor-add-dialog/event-task-contributor-add-dialog.component';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsComponent,
     EventDetailsComponent,
-    EventTaskAddComponent
+    EventTaskAddComponent,
+    EventTaskContributorAddDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
