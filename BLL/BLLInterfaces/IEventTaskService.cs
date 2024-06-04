@@ -13,7 +13,7 @@ namespace BLL.BLLInterfaces
         bool AddUserToEventTask(int userId, int eventTaskId);
         bool ChangeEventTask(int eventTaskId, EventTaskRequestDTO eventTaskRequest);
         bool DeleteEventTask(int eventTaskId);
-        bool FinishEventTask(int eventTaskId);
+        bool ChangeFinishStateEventTask(int eventTaskId);
         IEnumerable<EventTaskResponseDTO> GetUserEventTasks(int userId);
         IEnumerable<EventTaskResponseDTO> GetEventEventTasks(int eventId);
         IEnumerable<CommentResponseDTO> GetEventTaskComment(int eventTaskId);

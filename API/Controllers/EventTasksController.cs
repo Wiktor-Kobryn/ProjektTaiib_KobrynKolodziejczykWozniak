@@ -43,7 +43,7 @@ namespace API.Controllers
         [HttpPut("Finish/{id}")]
         public void FinishEventTask(int id) 
         {
-            eventTaskService.FinishEventTask(id);
+            eventTaskService.ChangeFinishStateEventTask(id);
         }
 
         [HttpGet("user/{userId}")]

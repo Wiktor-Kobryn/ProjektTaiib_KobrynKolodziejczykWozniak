@@ -2,7 +2,7 @@
     position: absolute;
     top: 20%;
     left: 50%;
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -10%);
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -26,6 +26,7 @@
 .task-title {
     font-family: Tahoma, Verdana, sens-serif;
     font-size: 30px;
+    height: 30px;
 }
 
 .task-item {
@@ -60,6 +61,10 @@
 .task-status.overDeadline {
     background-color: red;
 }
+
+.task-status.disabled {
+    pointer-events: none; 
+  }
 
 .task-body {
     flex-grow: 1;
@@ -104,7 +109,7 @@
 }
 
 .task-add-contributors :hover{
-    background-color: rgb(171, 241, 243);
+    background-color:  #e6e6e6;
 }
 
 .comments-section {
@@ -199,7 +204,7 @@
 }
 
 .button-add :hover{
-    background-color: rgb(171, 241, 243);
+    background-color:  #e6e6e6;
 }
 
 .centered-task-container {
@@ -235,6 +240,7 @@
     flex-direction: row;
     box-shadow: 0 0 10px #a2d2ff;
     margin-top: 5px;
+    height: 68px;
 }
 
 .contributors-image img {
@@ -257,7 +263,7 @@
 }
 
 .contributors-add :hover {
-    background-color: rgb(171, 241, 243);
+    background-color: rgb(100, 175, 245);
 }
 
 .comment-form {
@@ -296,7 +302,7 @@
 
 .summary-headers, .summary-values {
     display: flex;
-    justify-content: space-around; /* Rozdziela elementy równomiernie */
+    justify-content: space-around;
     width: 100%;
     font-weight: 700;
     font-size: 20px;
@@ -305,7 +311,7 @@
 .summary-headers > div, .summary-values > div {
     text-align: center;
     height: 34px;
-    width: 100px; /* Stała szerokość dla wszystkich elementów, możesz dostosować */
+    width: 100px;
 }
 
 .editorButton{
@@ -316,8 +322,12 @@
 
 .editorButton button{
     font-weight: bold;
-    width: 250px;
+    width: 350px;
     font-size: 27px;
     color: white;
     background-color: #a2d2ff;
+}
+
+.editorButton button.guest{
+    background-color: #ecea5b;
 }

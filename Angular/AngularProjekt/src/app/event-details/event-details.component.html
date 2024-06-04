@@ -19,7 +19,7 @@
         </div>
         <div *ngFor="let e of eventTasks" class="task-container">
             <div class="task-item">
-                <div class="task-status" [ngClass]="{'open': !e.isFinished, 'completed': e.isFinished, 'overDeadline': isOverDeadline(e)}"></div>
+                <div class="task-status" [ngClass]="{'open': !e.isFinished, 'completed': e.isFinished, 'overDeadline': isOverDeadline(e), 'disabled': !isEditorMode}" (click)="finishTask(e.id)"></div>
                 <div class="task-body">
                     {{ e.body }}
                 </div>
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-    <div class="button-add">
+    <div *ngIf="isEditorMode" class="button-add">
         <label for="addTask">ADD TASK</label>
         <input *ngIf="isCreator() && creator" type="button" id="addTask" name="addTask" value="+" (click)="addTask()">
     </div>
@@ -107,5 +107,5 @@
 </div>
 
 <div *ngIf="isCreator" class="editorButton"> 
-    <button mat-flat-button (click)="toggleMode()">{{ isEditorMode ? 'Normal mode' : 'Editor mode' }}</button>
+    <button mat-flat-button (click)="toggleMode()" [ngClass]="{'guest': !isEditorMode}">{{ !isEditorMode ? 'Current: guest mode' : 'Current: editor mode' }}</button>
 </div>

@@ -27,4 +27,8 @@ export class EventTasksService {
   public addUserToEventTask(userId: number, eventTaskId: number): Observable<void>{
     return this.httpClient.post<void>(`http://localhost:5171/api/EventTasks/${userId}/${eventTaskId}`, null);
   }
+
+  public changeFinishState(eventTaskId: number): Observable<void> {
+    return this.httpClient.put<void>(`http://localhost:5171/api/EventTasks/Finish/${eventTaskId}`, null)
+  }
 }

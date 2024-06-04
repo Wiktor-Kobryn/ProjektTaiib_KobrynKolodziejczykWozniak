@@ -51,5 +51,11 @@ namespace API.Controllers
         {
             return eventService.GetEvent(eventId);
         }
+
+        [HttpGet("{eventId}/contributors/size")]
+        public int GetContributorsSize(int eventId)
+        {
+            return eventService.GetContributorsSize(eventId);
+        }
     }
 }

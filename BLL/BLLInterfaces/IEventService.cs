@@ -15,5 +15,6 @@ namespace BLL.BLLInterfaces
         IEnumerable<EventResponseDTO> GetUserEvents(int userId);
         EventResponseDTO GetGroupEvent(int groupId);
         EventResponseDTO GetEvent(int eventId);
+        int GetContributorsSize(int eventId);
     }
 }

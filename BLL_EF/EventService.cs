@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BLL_EF
@@ -69,11 +70,24 @@ namespace BLL_EF
             }
 
             var g = db.Groups.Find(e.GroupId);
+            
             if (g != null) db.Groups.Remove(g);
             db.SaveChanges();
             db.Events.Remove(e);
             db.SaveChanges();
             return true;
+        }
+
+        public int GetContributorsSize(int eventId)
+        {
+            var g = db.Groups.FirstOrDefault(g => g.EventId == eventId);
+            if (g == null)
+                throw new Exception("Brak grupy");
+
+            var users = db.Users.Where(u => u.Groups.Contains(g)).ToList();
+            if (users == null)
+                throw new Exception("Blad");
+            return users.Count;
         }
 
         public EventResponseDTO GetGroupEvent(int groupId)

@@ -54,7 +54,7 @@ namespace API.Controllers
         [HttpGet("event/{id}")]
         public UserResponseDTO GetUserByEvent(int id)
         {
-            return userService.GetUser(id);
+            return userService.GetUserByEvent(id);
         }
 
         [HttpGet("group/{groupId}")]
@@ -68,5 +68,7 @@ namespace API.Controllers
         {
             return userService.GetEventTaskContributors(eventTaskId);
         }
+
+        
     }
 }

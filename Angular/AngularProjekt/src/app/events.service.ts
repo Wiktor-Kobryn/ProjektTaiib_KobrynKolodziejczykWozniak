@@ -30,4 +30,8 @@ export class EventsService {
   public getEvent(eventId: number): Observable<EventResponseDTO>{
       return this.httpClient.get<EventResponseDTO>(`http://localhost:5171/api/Events/${eventId}`)
   }
+
+  public getContributorsSize(eventId: number): Observable<number>{
+    return this.httpClient.get<number>(`http://localhost:5171/api/Events/${eventId}/contributors/size`);
+  }
 }

@@ -102,13 +102,16 @@ namespace BLL_EF
             return true;
         }
 
-        public bool FinishEventTask(int eventTaskId)
+        public bool ChangeFinishStateEventTask(int eventTaskId)
         {
             var e = db.EventTasks.Find(eventTaskId);
             if (e == null)
                 return false;
 
-            e.State = true;
+            //e.State = !e.State;
+            if(e.State) e.State = false;
+            else e.State = true;
+
             db.SaveChanges();
             return true;
         }

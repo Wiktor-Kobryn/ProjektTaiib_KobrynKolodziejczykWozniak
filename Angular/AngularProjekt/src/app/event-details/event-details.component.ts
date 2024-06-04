@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, inject } from '@angular/core';
 import { EventTasksService } from '../event-tasks.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventTaskResponseDTO } from '../model/event-task.interface';
@@ -34,7 +34,7 @@ export class EventDetailsComponent {
   commentText: string = '';
 
   constructor(private route: ActivatedRoute, private userService: UserService, private eventTasksService: EventTasksService,
-    private groupService: GroupsService, private eventService: EventsService,private commentService: CommentService, private router: Router, private dialog: MatDialog) {
+    private groupService: GroupsService, private eventService: EventsService, private commentService: CommentService, private router: Router, private dialog: MatDialog, private cdr: ChangeDetectorRef) {
     const eventId = route.snapshot.paramMap.get('eventId');
     if (eventId !== null) {
       eventTasksService.getEventEventTasks(parseInt(eventId)).subscribe({
@@ -72,10 +72,6 @@ export class EventDetailsComponent {
   }
 
   public getContributors(groupId: number): void {
-    if (!this.group) {
-      console.error("Obiekt 'group' jest niezdefiniowany.");
-      return;
-    }
     this.userService.getGroupUsers(groupId).subscribe({
       next: (res) => {
         this.contributors = res
@@ -87,8 +83,10 @@ export class EventDetailsComponent {
   public getGroup(eventId: number): void {
     this.groupService.getEventGroup(eventId).subscribe({
       next: (res) => {
-        this.group = res
-        this.getContributors(res.id);
+        if (res != null) {
+          this.group = res
+          this.getContributors(res.id);
+        }
       },
       error: (err) => err
     });
@@ -98,6 +96,10 @@ export class EventDetailsComponent {
     this.userService.getUserByEvent(eventId).subscribe({
       next: (res) => {
         this.creator = res;
+        this.isCreator();
+        if(this.group==undefined){
+          this.contributors.push(this.creator);
+        }
       },
       error: (err) => console.log(err)
     });
@@ -115,7 +117,10 @@ export class EventDetailsComponent {
   }
 
   public isCreator(): boolean {
-    if (1 == this.creator.id) return true;
+    if (1 == this.creator.id) {
+      this.isEditorMode = true;
+      return true;
+    }
     else return false;
   }
 
@@ -146,27 +151,27 @@ export class EventDetailsComponent {
   }
 
   public isOverDeadline(event: EventTaskResponseDTO): boolean {
-    if(event.isFinished) return false;
+    if (event.isFinished) return false;
     const currentTime = new Date();
     const deadline = new Date(event.deadline);
     return deadline.getTime() < currentTime.getTime();
   }
 
-  public showCommentInput(eventTaskId: number): void{
-    this.isCommentIconClicked= !this.isCommentIconClicked;
+  public showCommentInput(eventTaskId: number): void {
+    this.isCommentIconClicked = !this.isCommentIconClicked;
     this.choosedId = eventTaskId;
   }
   public commentRequest!: CommentRequestDTO;
-  
-  public addCommentToTask(eventTaskId: number, commentText: string): void{
+
+  public addCommentToTask(eventTaskId: number, commentText: string): void {
     console.log(this.commentText);
-    if(this.commentText!=''){ 
+    if (this.commentText != '') {
       this.commentRequest = {
         userId: 1,
         eventTaskId: eventTaskId,
         body: this.commentText
       }
-      
+
       this.commentService.add(this.commentRequest).subscribe({
         next: () => {
           this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
@@ -177,12 +182,12 @@ export class EventDetailsComponent {
     }
   }
 
-  public summary(): number[]{
-    var numbers: number[] = [0,0,0];
+  public summary(): number[] {
+    var numbers: number[] = [0, 0, 0];
     this.eventTasks.forEach(event => {
-      if(event.isFinished) numbers[1]++;
-      else{
-        if(this.isOverDeadline(event)) numbers[2]++;
+      if (event.isFinished) numbers[1]++;
+      else {
+        if (this.isOverDeadline(event)) numbers[2]++;
         else numbers[0]++;
       }
     });
@@ -191,6 +196,16 @@ export class EventDetailsComponent {
 
   public toggleMode(): void {
     this.isEditorMode = !this.isEditorMode;
+  }
+
+  public finishTask(eventTaskId: number) {
+    this.eventTasksService.changeFinishState(eventTaskId).subscribe({
+      next: () => {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/event/', this.event.id]);
+        })
+      }
+    })
   }
 
   public addContributor(): void {
