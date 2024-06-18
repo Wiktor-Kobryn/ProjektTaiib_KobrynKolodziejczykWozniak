@@ -1,0 +1,27 @@
+<form #productForm="ngForm" (ngSubmit)="onSubmit($event)">
+    <div>
+        <label for="body">Body</label>
+        <input 
+            type="text"
+            id="body"
+            name="body"
+            [(ngModel)]="eventTaskRequest.body"
+            required
+            >
+    </div>
+    <div>
+        <label for="deadline">Deadline</label>
+        <input 
+            type="datetime-local"
+            id="deadline"
+            name="deadline"
+            [(ngModel)]="eventTaskRequest.deadline"
+            >
+    </div>
+    <input type="button" name="cancel" id="cancel" value="Anuluj" (click)="cancel()"/>
+    <input 
+    type="submit" 
+    name="add" 
+    id="add" 
+    value="Add" >
+</form>

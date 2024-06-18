@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="nav-left">
+    <div class="nav-links">
+      <button class="nav-button" >Home</button>
+      <button class="nav-button">Profile</button>
+      <button class="nav-button" routerLink="dashboard">Dashboard</button>
+    </div>
+  </div>
+  <div class="nav-center">
+    <div class="nav-logo">
+      <mat-icon class="nav-logo-icon">event_available</mat-icon> 
+      <span class="logo-text">CheckChart</span>
+    </div>
+  </div>
+  <div class="nav-right">
+    <img [src]="user.image" alt="User Avatar" class="nav-avatar">
+    <mat-icon class="nav-logout-icon">logout</mat-icon>
+  </div>
+</nav>
+<router-outlet></router-outlet>

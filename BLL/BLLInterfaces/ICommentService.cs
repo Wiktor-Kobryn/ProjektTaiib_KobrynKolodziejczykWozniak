@@ -12,6 +12,5 @@ namespace BLL.BLLInterfaces
         bool AddComment(CommentRequestDTO commentRequest);
         bool ChangeCommentBody(int commentId, string body);
         bool DeleteComment(int commentId);
-        CommentResponseDTO GetEventTaskComment(int eventTaskId);
     }
 }

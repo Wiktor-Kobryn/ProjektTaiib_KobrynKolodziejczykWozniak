@@ -23,7 +23,7 @@ namespace Model
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }
 
-        public int GroupId { get; set; }
+        public int? GroupId { get; set; }
         [ForeignKey(nameof(GroupId))]
         public Group Group { get; set; }
 
@@ -31,7 +31,7 @@ namespace Model
 
         public EventType Type { get; set; }
 
-        public IEnumerable<EventTask> EventTasks { get; set; }
+        public ICollection<EventTask> EventTasks { get; set; }
 
         public void Configure(EntityTypeBuilder<Event> builder)
         {

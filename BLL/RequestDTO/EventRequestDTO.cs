@@ -11,7 +11,6 @@ namespace BLL.ResponseDTO
     {
         public string Title { get; init; }
         public int UserId { get; init; }
-        public int? GroupId { get; init; }
         public EventType Type { get; init; }
     }
 }

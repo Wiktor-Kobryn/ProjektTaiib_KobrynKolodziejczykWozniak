@@ -1,0 +1,48 @@
+<div class="add-event-form">
+    <div class="form-content">
+        <div class="form-header">
+            <mat-icon class="add-circle-icon">add_circle</mat-icon>
+            <span class="add-event-text">ADD NEW EVENT</span>
+        </div>
+        <form #eventForm="ngForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="form-group">
+                <mat-label class="label-form">Event type</mat-label>
+                <mat-select class="type-selector" id="type" name="type" [(ngModel)]="eventRequest.type" required>
+                    <mat-option value="0">Chart</mat-option>
+                    <mat-option value="1">Task</mat-option>
+                    <mat-option value="2">Activity</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-group" >
+                <mat-label class="label-form">Name</mat-label>
+                <input matInput type="text" id="title" name="title" [(ngModel)]="eventRequest.title" required>
+            </mat-form-field>
+            <button type="submit" class="create-button">
+                CREATE<mat-icon>arrow_forward</mat-icon>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="main-events-container">
+    <div class="event-container" *ngFor="let e of events">
+        <div class="event-card" [ngClass]="{'this-user-event': e.userId === currentUser, 'not-this-user-event': e.userId !== currentUser}">
+            <div class="event-header">
+                <mat-icon class="event-type-icon" *ngIf="getEventTypeText(e.type) == 'Chart'">insert_chart</mat-icon>
+                <mat-icon class="event-type-icon" *ngIf="getEventTypeText(e.type) == 'Task'">check_box</mat-icon>
+                <mat-icon class="event-type-icon" *ngIf="getEventTypeText(e.type) == 'Activity'">calendar_month</mat-icon>
+                <span class="event-type">{{ getEventTypeText(e.type) }}</span>
+                <mat-icon [ngClass]="{'hidden': e.userId !== currentUser}" class="star-icon">star</mat-icon>
+            </div>
+            <div class="event-title">{{ e.title }}</div>
+            <div class="event-footer">
+                <mat-icon [ngClass]="{'hidden': e.userId !== currentUser}" class="delete-icon" (click)="removeEvent(e.id)">delete</mat-icon>
+                <div class="event-person">
+                    <mat-icon class="person-icon">person</mat-icon>
+                    <div class="person-amount">{{eventSizeOfContributors.get(e)}}</div>
+                </div>
+                <mat-icon class="details-icon" (click)="navigateToDetails(e.id)">arrow_circle_right</mat-icon>
+            </div>
+        </div>
+    </div>
+</div>
