@@ -12,6 +12,10 @@ export class EventTasksService {
 
   constructor(private httpClient: HttpClient) { }
 
+  public getUserEventTasks(userId: number): Observable<EventTaskResponseDTO[]>{
+    return this.httpClient.get<EventTaskResponseDTO[]>(`http://localhost:5171/api/EventTasks/user/${userId}`);
+  }
+
   public getEventEventTasks(eventId: number): Observable<EventTaskResponseDTO[]>{
     return this.httpClient.get<EventTaskResponseDTO[]>(`http://localhost:5171/api/EventTasks/event/${eventId}`);
   }

@@ -3,6 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E4193B20-4A42-4A82-87B5-04025709F3D6}|API.csproj|c:\\users\\wikto\\desktop\\studia katowice\\taiib\\projekttaiib_kobrynkolodziejczykwozniak\\api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4193B20-4A42-4A82-87B5-04025709F3D6}|API.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6FB8575-B788-4BBB-BCF6-E0122944F855}|..\\DAL\\DAL.csproj|c:\\users\\wikto\\desktop\\studia katowice\\taiib\\projekttaiib_kobrynkolodziejczykwozniak\\dal\\checkchartcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{538943E0-6348-40A9-B35F-1426D1D3B339}|..\\BLL\\BLL.csproj|c:\\users\\wikto\\desktop\\studia katowice\\taiib\\projekttaiib_kobrynkolodziejczykwozniak\\bll\\bllinterfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -16,28 +23,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLLInterfaces\\IUserService.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\BLLInterfaces\\IUserService.cs",
-              "ToolTip": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLLInterfaces\\IUserService.cs",
-              "RelativeToolTip": "..\\BLL\\BLLInterfaces\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T21:17:48.17Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T12:59:48.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CheckChartContext.cs",
+              "DocumentMoniker": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\CheckChartContext.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\CheckChartContext.cs",
+              "ToolTip": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\CheckChartContext.cs",
+              "RelativeToolTip": "..\\DAL\\CheckChartContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T11:12:47.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLLInterfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\BLLInterfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLLInterfaces\\IUserService.cs",
+              "RelativeToolTip": "..\\BLL\\BLLInterfaces\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T21:17:48.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Event.cs",
               "RelativeDocumentMoniker": "..\\Model\\Event.cs",
@@ -45,8 +78,7 @@
               "RelativeToolTip": "..\\Model\\Event.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T20:49:40.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T20:49:40.747Z"
             }
           ]
         }

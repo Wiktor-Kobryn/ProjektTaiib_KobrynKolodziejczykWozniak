@@ -370,3 +370,7 @@ C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\
 C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\API\obj\Debug\net6.0\API.pdb
 C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BLL.dll
+C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BLL_EF.dll
+C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BLL.pdb
+C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BLL_EF.pdb

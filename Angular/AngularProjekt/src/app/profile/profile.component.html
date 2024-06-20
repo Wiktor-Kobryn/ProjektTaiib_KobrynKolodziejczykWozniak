@@ -1,0 +1,47 @@
+<div *ngIf="user.isAdmin">
+    <button (click)="navigateToAdminPanel()">Admin Panel ></button>
+</div>
+
+<div class="userProfile">
+    <ng-container *ngIf="user.isAdmin">
+        <mat-icon>star_outline</mat-icon>
+        <br />
+    </ng-container> 
+        
+    <img src={{user.image}} style="width: 200px; height: auto;"/>
+    <h2>
+        {{user.login}}
+    </h2>
+    ~ {{user.name}} ~
+</div>
+
+<div class="tasks">
+    <div class="tasks-title">
+        <mat-icon>library_add_check</mat-icon>
+        <label> Tasks near deadline</label>
+    </div> 
+    <div class="tasks-body">
+        <tr *ngFor="let task of eventTasks" class="tasks-row">
+            <td><mat-icon>play_arrow</mat-icon></td>
+            <td class="tasks-col">{{task.body}}</td>
+            <td>{{task.creationDate | date:"longDate"}}</td>
+        </tr>
+    </div>
+</div>
+
+<div class="friends">
+    <div class="friends-title">
+        <label>Friends </label>
+        <mat-icon>group</mat-icon>
+    </div> 
+    <div class="friends-background">
+        <div>
+            <input type="button" id="addFriends" name="addFriends" value="+" (click)="navigateToAddFriend()"/>
+        </div>
+        <div *ngFor="let f of friends">
+            <div class="friends-image">
+                <img [src]="f.image" alt="Contributor avatar">
+            </div>
+        </div>
+    </div>
+</div>

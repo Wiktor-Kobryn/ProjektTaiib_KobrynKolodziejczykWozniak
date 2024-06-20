@@ -16,7 +16,7 @@ namespace DAL
         {
 
             optionsBuilder
-                .UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\CheckChartDB.mdf;Integrated Security=True;Connect Timeout=30");
+                .UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\CheckChartDB.mdf;Integrated Security=True;Connect Timeout=30");
         }
     }
 }
