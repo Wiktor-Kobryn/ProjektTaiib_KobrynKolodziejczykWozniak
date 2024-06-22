@@ -4,8 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { EventTasksService } from '../event-tasks.service';
 import { EventTaskResponseDTO } from '../model/event-task.interface';
-import { D } from '@angular/cdk/keycodes';
 import { formatDate } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { UserChangeDialogComponent } from '../user-change-dialog/user-change-dialog.component';
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +15,7 @@ import { formatDate } from '@angular/common';
 })
 export class ProfileComponent {
   // tymczasowy użytkownik - zmienić po dodaniu JWT !!!
-  public currentUserID: number = 10;
+  public currentUserID: number = 1;
 
   public user!: UserResponseDTO;
   public eventTasks: EventTaskResponseDTO[] = [];
@@ -22,7 +23,7 @@ export class ProfileComponent {
   public today: Date = new Date();
 
   constructor(private route: ActivatedRoute, private userService: UserService,
-    private eventTasksService: EventTasksService, private router: Router) {
+    private eventTasksService: EventTasksService, private router: Router, private dialog: MatDialog) {
 
     this.getCurrentUser();
   }
@@ -75,7 +76,20 @@ export class ProfileComponent {
   }
 
   public editUserData(): void {
-    // redirect
-  }
+    var userReqDialog = this.dialog.open(UserChangeDialogComponent, {
+      data: this.user
+    });
 
+    userReqDialog.afterClosed().subscribe(res => {
+      if (res != null) {
+        this.userService.changeUser(this.user.id, res).subscribe({
+          next: () => {
+            // data reload
+            this.getCurrentUser();
+          },
+        })
+      }
+    }
+  )
+  }
 }

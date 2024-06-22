@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ProfileComponent } from './profile/profile.component';
 import { FriendsAddComponent } from './friends-add/friends-add.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { UserChangeDialogComponent } from './user-change-dialog/user-change-dialog.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     EventTaskContributorAddDialogComponent,
     ProfileComponent,
     FriendsAddComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    UserChangeDialogComponent
   ],
   imports: [
     BrowserModule,

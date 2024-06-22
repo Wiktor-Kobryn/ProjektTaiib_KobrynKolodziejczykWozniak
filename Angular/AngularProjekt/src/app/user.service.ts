@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserResponseDTO } from './model/user.interface';
 import { Observable } from 'rxjs';
+import { UserRequestDTO } from './model/userRequest.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,9 @@ export class UserService {
   public addFriend(userAId: number, userBId: number): Observable<void> {
     const body = { userAId, userBId };
     return this.httpClient.post<void>(`http://localhost:5171/api/Users/Friendship`, body);
+  }
+
+  public changeUser(userId: number, userRequest: UserRequestDTO): Observable<void> {
+    return this.httpClient.put<void>(`http://localhost:5171/api/Users/${userId}`, userRequest);
   }
 }
