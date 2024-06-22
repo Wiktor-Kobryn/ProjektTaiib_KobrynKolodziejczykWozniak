@@ -69,6 +69,28 @@ namespace API.Controllers
             return userService.GetEventTaskContributors(eventTaskId);
         }
 
-        
+        [HttpPut("{id}")]
+        public void ChangeUser([FromBody] UserRequestDTO userRequest, int id)
+        {
+            userService.ChangeUser(id, userRequest);
+        }
+
+        [HttpPost]
+        public void AddUser([FromBody] UserRequestDTO userRequest)
+        {
+            userService.AddUser(userRequest);
+        }
+
+        [HttpGet("{id}/NonFriends")]
+        public IEnumerable<UserResponseDTO> GetUsersNonFriends(int id)
+        {
+            return userService.GetUsersNonFriends(id);
+        }
+
+        [HttpGet("{id}/NonFriends/Name")]
+        public IEnumerable<UserResponseDTO> GetUsersNonFriendsByName(int id, [FromQuery] string name)
+        {
+            return userService.GetUsersNonFriendsByName(id, name); 
+        }
     }
 }

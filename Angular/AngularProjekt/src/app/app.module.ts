@@ -17,6 +17,8 @@ import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ProfileComponent } from './profile/profile.component';
+import { FriendsAddComponent } from './friends-add/friends-add.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ProfileComponent } from './profile/profile.component';
     EventDetailsComponent,
     EventTaskAddComponent,
     EventTaskContributorAddDialogComponent,
-    ProfileComponent
+    ProfileComponent,
+    FriendsAddComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,

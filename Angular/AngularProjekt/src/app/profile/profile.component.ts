@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { EventTasksService } from '../event-tasks.service';
 import { EventTaskResponseDTO } from '../model/event-task.interface';
+import { D } from '@angular/cdk/keycodes';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
@@ -12,11 +14,12 @@ import { EventTaskResponseDTO } from '../model/event-task.interface';
 })
 export class ProfileComponent {
   // tymczasowy użytkownik - zmienić po dodaniu JWT !!!
-  public currentUserID: number = 1;
+  public currentUserID: number = 10;
 
   public user!: UserResponseDTO;
   public eventTasks: EventTaskResponseDTO[] = [];
   public friends: UserResponseDTO[] = [];
+  public today: Date = new Date();
 
   constructor(private route: ActivatedRoute, private userService: UserService,
     private eventTasksService: EventTasksService, private router: Router) {
@@ -54,15 +57,24 @@ export class ProfileComponent {
       next: (res) => {
         this.friends = res;
       },
-      error: (err) => console.log('Error fetching users event tasks: ', err)
+      error: (err) => console.log('Error fetching users friends: ', err)
     });
   }
 
+  public creationDateCheck(creationDate: string): boolean {
+    const creationDateObj = new Date(creationDate);
+    return formatDate(creationDateObj, 'yyyy-MM-dd','en_US') >= formatDate(this.today, 'yyyy-MM-dd','en_US');
+  }
+
   public navigateToAdminPanel(): void {
-    // redirect
+    this.router.navigateByUrl("adminpanel");
   }
 
   public navigateToAddFriend(): void {
+    this.router.navigateByUrl("friends");
+  }
+
+  public editUserData(): void {
     // redirect
   }
 
