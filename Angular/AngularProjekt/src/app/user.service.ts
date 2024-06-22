@@ -10,6 +10,10 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
+  public getUserFriends(userId: number): Observable<UserResponseDTO[]> {
+    return this.httpClient.get<UserResponseDTO[]>(`http://localhost:5171/api/Users/UserFriends/${userId}`)
+  }
+
   public getUser(userId: number): Observable<UserResponseDTO> {
     return this.httpClient.get<UserResponseDTO>(`http://localhost:5171/api/Users/${userId}`);
   }

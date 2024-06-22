@@ -41,7 +41,7 @@
                     <mat-icon class="person-icon">person</mat-icon>
                     <div class="person-amount">{{eventSizeOfContributors.get(e)}}</div>
                 </div>
-                <mat-icon class="details-icon" (click)="navigateToDetails(e.id)">arrow_circle_right</mat-icon>
+                <mat-icon class="details-icon" (click)="navigateToDetails(e.id, getEventTypeText(e.type))">arrow_circle_right</mat-icon>
             </div>
         </div>
     </div>

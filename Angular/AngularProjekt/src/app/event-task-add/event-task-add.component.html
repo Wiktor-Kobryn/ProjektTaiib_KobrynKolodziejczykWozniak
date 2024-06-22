@@ -1,27 +1,16 @@
-<form #productForm="ngForm" (ngSubmit)="onSubmit($event)">
-    <div>
-        <label for="body">Body</label>
-        <input 
-            type="text"
-            id="body"
-            name="body"
-            [(ngModel)]="eventTaskRequest.body"
-            required
-            >
-    </div>
-    <div>
-        <label for="deadline">Deadline</label>
-        <input 
-            type="datetime-local"
-            id="deadline"
-            name="deadline"
-            [(ngModel)]="eventTaskRequest.deadline"
-            >
-    </div>
-    <input type="button" name="cancel" id="cancel" value="Anuluj" (click)="cancel()"/>
-    <input 
-    type="submit" 
-    name="add" 
-    id="add" 
-    value="Add" >
-</form>
+<h2 mat-dialog-title>Add new task</h2>
+<div mat-dialog-content> Insert data and click submit to save new task or click cancel to exit dialog. </div>
+<div class="form-fields">
+    <mat-form-field class="body-field">
+        <mat-label>Body</mat-label>
+        <input type="text" matInput placeholder="Insert body" [(ngModel)]="eventTaskRequest.body" required>
+    </mat-form-field><br/>
+    <mat-form-field class="date-field">
+        <mat-label>Deadline</mat-label>
+        <input type="datetime-local" matInput placeholder="Insert body" [(ngModel)]="eventTaskRequest.deadline" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="eventTaskRequest" class="contributors-button">Submit</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+<div>
