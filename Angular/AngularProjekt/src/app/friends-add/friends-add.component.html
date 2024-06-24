@@ -1,0 +1,52 @@
+<div class="user">
+    <div class="user-background">
+        <div class="user-image">
+            <img [src]="user.image" alt="User avatar">
+        </div>
+        <div class="user-login">
+           {{user.login}}
+        </div>
+    </div>
+</div>
+
+
+<div class="friends">
+    <div class="friends-title">
+        <label>Your Friends </label>
+        <mat-icon class="icon">group</mat-icon>
+    </div> 
+    <div class="friends-background">
+        <div *ngFor="let f of friends">
+            <div class="friends-image">
+                <img [src]="f.image" alt="Friend avatar">
+            </div>
+            <div class="friends-login">{{f.login}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="otherusers">
+    <div class="friends-title">
+      <label>Add New Friends </label>
+      <mat-icon class="icon">person_add</mat-icon>
+    </div> 
+    <div class="search-section">
+        <form (ngSubmit)="searchFriendsByName()">
+            <input class="search-box" id="searchText" name="searchText" type="text" [(ngModel)]="searchName" />
+            <div class="search-icon">
+                <button type="submit"><mat-icon class="icon">search</mat-icon></button>
+            </div>
+        </form>
+    </div>
+    <div class="friends-background scrollable">
+      <div *ngFor="let nf of nonFriends" class="otherusers-item">
+        <div class="friends-image">
+          <img [src]="nf.image" alt="User avatar">
+        </div>
+        <div class="otherusers-login">{{nf.login}}</div>
+        <div class="otherusers-add">
+          <button mat type="button" (click)="addFriend(nf)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>

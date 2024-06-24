@@ -20,6 +20,14 @@ import { ProfileComponent } from './profile/profile.component';
 import { EventActivityComponent } from './event-activity/event-activity.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventTaskActivityAddComponent } from './event-task-activity-add/event-task-activity-add.component';
+import { FriendsAddComponent } from './friends-add/friends-add.component';
+import { UserChangeDialogComponent } from './user-change-dialog/user-change-dialog.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { EventChartComponent } from './event-chart/event-chart.component';
+import { GroupAddDialogComponent } from './group-add-dialog/group-add-dialog.component';
+import { EventContributorAddDialogComponent } from './event-contributor-add-dialog/event-contributor-add-dialog.component';
 
 
 @NgModule({
@@ -31,7 +39,15 @@ import { EventTaskActivityAddComponent } from './event-task-activity-add/event-t
     EventTaskContributorAddDialogComponent,
     ProfileComponent,
     EventActivityComponent,
-    EventTaskActivityAddComponent
+    EventTaskActivityAddComponent,
+    FriendsAddComponent,
+    UserChangeDialogComponent,
+    AdminPanelComponent,
+    HomeComponent,
+    LoginComponent,
+    EventChartComponent,
+    GroupAddDialogComponent,
+    EventContributorAddDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,21 @@
-<div *ngIf="user.isAdmin">
-    <button (click)="navigateToAdminPanel()">Admin Panel ></button>
+<div class="admin-section" *ngIf="user.isAdmin">
+    <button class="admin-section-button" (click)="navigateToAdminPanel()">Admin Panel</button>
 </div>
 
-<div class="userProfile">
-    <ng-container *ngIf="user.isAdmin">
-        <mat-icon>star_outline</mat-icon>
+<div class="user-profile">
+    <div class="user-info">
+        <ng-container *ngIf="user.isAdmin">
+            <mat-icon class="admin-icon">star</mat-icon>
+        </ng-container> 
+
+        <img [src]="user.image" alt="Contributor avatar" class="user-image">
         <br />
-    </ng-container> 
-        
-    <img src={{user.image}} style="width: 200px; height: auto;"/>
-    <h2>
-        {{user.login}}
-    </h2>
-    ~ {{user.name}} ~
+        <div class="user-login">
+            {{user.login}}
+            <button mat type="button" (click)="editUserData()"><mat-icon class="edit-icon">edit</mat-icon></button>
+        </div>
+        <p class="user-name">~ {{user.name}} ~</p>
+    </div>
 </div>
 
 <div class="tasks">
@@ -22,9 +25,11 @@
     </div> 
     <div class="tasks-body">
         <tr *ngFor="let task of eventTasks" class="tasks-row">
-            <td><mat-icon>play_arrow</mat-icon></td>
-            <td class="tasks-col">{{task.body}}</td>
-            <td>{{task.creationDate | date:"longDate"}}</td>
+            <ng-container *ngIf="creationDateCheck(task.creationDate)">
+                <td><mat-icon>play_arrow</mat-icon></td>
+                <td class="tasks-col">{{task.body}}</td>
+                <td>{{task.creationDate | date:"longDate"}}</td>
+            </ng-container>
         </tr>
     </div>
 </div>
@@ -35,8 +40,8 @@
         <mat-icon>group</mat-icon>
     </div> 
     <div class="friends-background">
-        <div>
-            <input type="button" id="addFriends" name="addFriends" value="+" (click)="navigateToAddFriend()"/>
+        <div class="friends-add">
+            <button mat type="button" (click)="navigateToAddFriend()">+</button>
         </div>
         <div *ngFor="let f of friends">
             <div class="friends-image">

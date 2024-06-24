@@ -22,7 +22,7 @@ export class EventsComponent {
     public eventCreators = new Map<EventResponseDTO, number>();
     public eventRequest: EventRequestDTO = {
       title: "",
-      userId: 1,
+      userId: this.currentUser,
       type: EventType.activity
     }
   
@@ -58,7 +58,7 @@ export class EventsComponent {
     }
   
     private getEventsByUser(): Observable<EventResponseDTO[]> {
-      return this.eventsService.getUserEvents(1);
+      return this.eventsService.getUserEvents(this.currentUser);
     }
   
     private getEventsByGroup(): Observable<EventResponseDTO[]> {

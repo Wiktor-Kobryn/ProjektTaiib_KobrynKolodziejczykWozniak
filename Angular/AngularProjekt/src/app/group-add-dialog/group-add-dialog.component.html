@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Add new group</h2>
+<div mat-dialog-content> Insert name and click create group to save new group or click cancel to exit dialog. </div>
+<div class="form-fields">
+    <mat-form-field class="body-field">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Inser name of group" [(ngModel)]="groupRequest.name" required>
+    </mat-form-field><br/>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="groupRequest" class="group-button">Submit</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+<div>

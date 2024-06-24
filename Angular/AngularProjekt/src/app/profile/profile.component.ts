@@ -4,6 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { EventTasksService } from '../event-tasks.service';
 import { EventTaskResponseDTO } from '../model/event-task.interface';
+import { formatDate } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { UserChangeDialogComponent } from '../user-change-dialog/user-change-dialog.component';
 
 @Component({
   selector: 'app-profile',
@@ -17,9 +20,10 @@ export class ProfileComponent {
   public user!: UserResponseDTO;
   public eventTasks: EventTaskResponseDTO[] = [];
   public friends: UserResponseDTO[] = [];
+  public today: Date = new Date();
 
   constructor(private route: ActivatedRoute, private userService: UserService,
-    private eventTasksService: EventTasksService, private router: Router) {
+    private eventTasksService: EventTasksService, private router: Router, private dialog: MatDialog) {
 
     this.getCurrentUser();
   }
@@ -54,16 +58,38 @@ export class ProfileComponent {
       next: (res) => {
         this.friends = res;
       },
-      error: (err) => console.log('Error fetching users event tasks: ', err)
+      error: (err) => console.log('Error fetching users friends: ', err)
     });
   }
 
+  public creationDateCheck(creationDate: string): boolean {
+    const creationDateObj = new Date(creationDate);
+    return formatDate(creationDateObj, 'yyyy-MM-dd','en_US') >= formatDate(this.today, 'yyyy-MM-dd','en_US');
+  }
+
   public navigateToAdminPanel(): void {
-    // redirect
+    this.router.navigateByUrl("adminpanel");
   }
 
   public navigateToAddFriend(): void {
-    // redirect
+    this.router.navigateByUrl("friends");
   }
 
+  public editUserData(): void {
+    var userReqDialog = this.dialog.open(UserChangeDialogComponent, {
+      data: this.user
+    });
+
+    userReqDialog.afterClosed().subscribe(res => {
+      if (res != null) {
+        this.userService.changeUser(this.user.id, res).subscribe({
+          next: () => {
+            // data reload
+            this.getCurrentUser();
+          },
+        })
+      }
+    }
+  )
+  }
 }

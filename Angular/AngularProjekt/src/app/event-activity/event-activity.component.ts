@@ -90,6 +90,8 @@ export class EventActivityComponent extends EventCommon{
   
   
   public addActivity(date: Date | null): void {
+    if(this.isDone(date)) return;
+    if(!this.isEditorMode) return;
     if(date!=null){
       var x = this.dialog.open(EventTaskActivityAddComponent, {
         data: { eventId: this.event.id, date: date}
@@ -101,9 +103,14 @@ export class EventActivityComponent extends EventCommon{
             console.log(res);
             this.eventTasksService.addTask(1, res).subscribe({
               next: () => {
-                this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-                  this.router.navigate(['/event/'+this.getEventTypeText(this.event.type), this.event.id]);
-                })
+                this.eventTasksService.getEventEventTasks(this.event.id).subscribe({
+                  next: (res) => {
+                    this.eventTasks = res;
+                    this.getEventTaskContributors();
+                    this.getComments();
+                  },
+                  error: (err) => console.log(err)
+                });
               },
               error: (err) => console.log(err)
             })
@@ -115,15 +122,18 @@ export class EventActivityComponent extends EventCommon{
 
   public showDescription(event: Event, date: Date | null): void
   {
+    if(!this.isDone(date)) return;
     event.stopPropagation();
     this.isCommentIconClicked = true;
     this.eventTasks.forEach(activity => {
       const deadline = new Date(activity.deadline);
       if (deadline.getDate() === (date?.getDate()) && deadline.getMonth() === (date?.getMonth()) && deadline.getFullYear() === (date.getFullYear())) {
         this.choosedEvent = activity;
+        this.choosedId = activity.id;
       }
     });
     
   }
 
+ 
 }

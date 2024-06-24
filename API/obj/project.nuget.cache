@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1HUlfgpUEvpzxQ04XpJnXPJphn2sqrxg2M0wvfhqnJb1Pst8+T8hbTV965Pj133vsgyvr/S0qahCuOuJfjK+wQ==",
+  "dgSpecHash": "mWP4AcF8uUMzC2k/xCoLImGthFtsp6KSGPfsaPcgeMh5hwVtErMaIek7jhad0MTUwNzK9nuc8DpaUr5LAiZNUg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Kuba\\Desktop\\Taiib_Projekt\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kuba\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Kuba\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

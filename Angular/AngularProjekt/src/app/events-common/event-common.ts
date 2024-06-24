@@ -15,6 +15,8 @@ import { CommentRequestDTO } from "../model/commentRequest.interface";
 import { MatDialog } from "@angular/material/dialog";
 import { EventType } from "../model/eventType.interface";
 import { EventTaskAddComponent } from "../event-task-add/event-task-add.component";
+import { Subscription } from "rxjs";
+import { GroupAddDialogComponent } from "../group-add-dialog/group-add-dialog.component";
 
 
 @Directive()
@@ -24,12 +26,15 @@ export abstract class EventCommon {
   public commentsMap = new Map<number, CommentResponseDTO[]>();
   public eventTaskContributors = new Map<number, UserResponseDTO[]>();
   public creator!: UserResponseDTO;
+  public creatorFriends: UserResponseDTO[] = [];
   public group: GroupResponseDTO | null = null;
   public contributors: UserResponseDTO[] = [];
   public isCommentIconClicked: boolean = false;
   public choosedId: number = -1;
   public isEditorMode: boolean = false;
   commentText: string = '';
+  private commentSubscription!: Subscription;
+  public currentUser: number = 1;     ///do zmiany!!!!!!!!!!!!!!!!!!!1
 
   constructor(protected route: ActivatedRoute, protected userService: UserService, protected eventTasksService: EventTasksService,
     protected groupService: GroupsService, protected eventService: EventsService, protected commentService: CommentService, protected router: Router, protected dialog: MatDialog, protected cdr: ChangeDetectorRef) {
@@ -48,6 +53,21 @@ export abstract class EventCommon {
       });
     }
 
+  }
+
+  ngOnInit() {
+    this.commentSubscription = this.eventTasksService.comments$.subscribe(comments => {
+      if (this.choosedId !== -1) {
+        this.commentsMap.set(this.choosedId, comments);
+        this.cdr.detectChanges();
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.commentSubscription) {
+      this.commentSubscription.unsubscribe();
+    }
   }
 
   public getEvent(eventId: number): void {
@@ -99,8 +119,18 @@ export abstract class EventCommon {
         if (this.group == undefined) {
           this.contributors.push(this.creator);
         }
+        this.getCreatorFriends(res.id);
       },
       error: (err) => console.log(err)
+    });
+  }
+
+  private getCreatorFriends(id: number) {
+    this.userService.getUserFriends(id).subscribe({
+      next: (res) => {
+        this.creatorFriends = res;
+      },
+      error: (err) => console.log('Error fetching users friends: ', err)
     });
   }
 
@@ -116,8 +146,7 @@ export abstract class EventCommon {
   }
 
   public isCreator(): boolean {
-    if (1 == this.creator.id) {
-      this.isEditorMode = true;
+    if (this.currentUser == this.creator.id) {
       return true;
     }
     else return false;
@@ -137,15 +166,19 @@ export abstract class EventCommon {
           console.log(res);
           this.eventTasksService.addUserToEventTask(res, eventTaskId).subscribe({
             next: () => {
-              this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-                this.router.navigate(['/event/'+this.getEventTypeText(this.event.type), this.event.id]);
+              this.eventTasksService.getEventEventTasks(this.event.id).subscribe({
+                next: (res) => {
+                  this.eventTasks = res;
+                  this.getEventTaskContributors();
+                  this.getComments();
+                },
+                error: (err) => console.log(err)
               })
-            },
-            error: (err) => console.log(err)
-          })
+            }
+          }
+          )
         }
-      }
-    )
+      })
   }
 
   public addTask(): void {
@@ -156,11 +189,17 @@ export abstract class EventCommon {
       res => {
         if (res != null) {
           console.log(res);
-          this.eventTasksService.addTask(1, res).subscribe({
+          this.eventTasksService.addTask(this.currentUser, res).subscribe({
             next: () => {
-              this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-                this.router.navigate(['/event/'+this.getEventTypeText(this.event.type), this.event.id]);
-              })
+              this.eventTasksService.getEventEventTasks(this.event.id).subscribe({
+                next: (res) => {
+                  this.eventTasks = res;
+                  this.getEventTaskContributors();
+                  this.getComments();
+                },
+                error: (err) => console.log(err)
+              });
+              this.cdr.detectChanges();
             },
             error: (err) => console.log(err)
           })
@@ -186,22 +225,20 @@ export abstract class EventCommon {
     console.log(this.commentText);
     if (this.commentText != '') {
       this.commentRequest = {
-        userId: 1,
+        userId: this.currentUser,
         eventTaskId: eventTaskId,
         body: this.commentText
       }
 
       this.commentService.add(this.commentRequest).subscribe({
         next: () => {
-          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-            this.router.navigate(['/event/'+this.getEventTypeText(this.event.type), this.event.id]);
-          })
+          this.eventTasksService.loadComments(eventTaskId);
         }
       })
     }
   }
 
- 
+
 
   public summary(): number[] {
     var numbers: number[] = [0, 0, 0];
@@ -216,24 +253,77 @@ export abstract class EventCommon {
   }
 
   public toggleMode(): void {
-    this.isEditorMode = !this.isEditorMode;
+    if (this.isCreator())
+      this.isEditorMode = !this.isEditorMode;
   }
 
   public finishTask(eventTaskId: number) {
     this.eventTasksService.changeFinishState(eventTaskId).subscribe({
       next: () => {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-          this.router.navigate(['/event/'+this.getEventTypeText(this.event.type), this.event.id]);
-        })
+        const task = this.eventTasks.find(t => t.id === eventTaskId);
+        if (task) {
+          task.isFinished = !task.isFinished;
+        }
+        this.cdr.detectChanges();
       }
     })
   }
 
-  public addContributor(): void {
+  public addContributorButton(): void {
+    if (this.contributors.length == 1 && this.group == null)
+      this.addGroup(); 
+    else if (this.contributors.length >= 1)
+      this.addContributor();
+  }
+
+  public addGroup(): void {
+    var x = this.dialog.open(GroupAddDialogComponent, {
+      data: this.event.id
+    });
+    x.afterClosed().subscribe(
+      res => {
+        if (res != null) {
+          console.log(res);
+          this.groupService.addGroup(res, this.creator.id).subscribe({
+            next: () => {
+              this.eventTasksService.getEventEventTasks(this.event.id).subscribe({
+                next: () => {
+                  this.getGroup(this.event.id);
+                  this.addContributor()
+                }
+              })
+            },
+            error: (err) => console.log(err)
+          })
+        }
+      }
+    )
 
   }
 
- 
+  public addContributor(): void {
+    var x = this.dialog.open(EventTaskContributorAddDialogComponent, {
+      data: this.creatorFriends
+    });
+    x.afterClosed().subscribe(
+      res => {
+        if (res != null) {
+          if (this.group != null)
+            this.groupService.addUserToGroup(res, this.group?.id).subscribe({
+              next: () => {
+                this.eventService.getEvent(this.event.id).subscribe({
+                  next: () => {
+                    this.getGroup(this.event.id);
+                  },
+                  error: (err) => console.log(err)
+                })
+              }
+            }
+            )
+        }
+      })
+  }
+
 
   public getEventTypeText(eventType: EventType): string {
     switch (eventType) {

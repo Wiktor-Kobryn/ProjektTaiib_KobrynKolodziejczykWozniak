@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UmCo+vqVNw6niqRa4O11UQ5VfAUUuikezDq+iN74Swf2Dz7eWg5nwiwzUeE+/kPKI+Wp5l66ekNTPq2R+MkycQ==",
+  "dgSpecHash": "XGrIhVhvDAmf5tJoboi8i9sZ4QgYYMpk5O1BwpRdWvqyx3aywIv2D+Qetw8zI1SQl/deoro5PWZA9LHuAqKZgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj",
+  "projectFilePath": "C:\\Users\\Kuba\\Desktop\\Taiib_Projekt\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kuba\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Kuba\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

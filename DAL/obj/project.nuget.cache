@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gWrEcEL3QVmUNAB0N7ZHIw+UYSR3YAHSZ/UNBeOmRVJChHJbTmD+AAdUXYguxyHAcg/IlhweWmNL82lBRIQArw==",
+  "dgSpecHash": "LqAfB3rXz8YNoSIC/maif+YCALUyU1XrVAAkJqJLpEw1h2ybNCETMUHvdI7vNQ09dKqqNaGtt7jN+K13bCnVog==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\Kuba\\Desktop\\Taiib_Projekt\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kuba\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Kuba\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
