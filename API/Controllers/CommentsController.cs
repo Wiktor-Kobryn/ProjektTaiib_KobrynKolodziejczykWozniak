@@ -1,11 +1,12 @@
 ﻿using BLL.BLLInterfaces;
 using BLL.ResponseDTO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class CommentsController : ControllerBase
     {
         readonly ICommentService commentService;

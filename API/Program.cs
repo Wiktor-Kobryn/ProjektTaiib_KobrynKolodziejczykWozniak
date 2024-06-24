@@ -18,42 +18,38 @@ builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IEventTaskService, EventTaskService>();
 builder.Services.AddScoped<IGroupService, GroupService>();
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddTransient<IAuthService, AuthService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CheckChartContext>();
 
 
-
-// For Identity  
-builder.Services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<CheckChartContext>()
-                .AddDefaultTokenProviders();
-// Adding Authentication  
-builder.Services.AddAuthentication(options =>
+builder.Services.AddAuthentication(opt =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-
-// Adding Jwt Bearer  
             .AddJwtBearer(options =>
             {
-                options.SaveToken = true;
-                options.RequireHttpsMetadata = false;
-                options.TokenValidationParameters = new TokenValidationParameters()
+                options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
-                    ValidAudience = builder.Configuration["JWT:ValidAudience"],
-                    ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
-                    ClockSkew = TimeSpan.Zero,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = "https://localhost:5171",
+                    ValidAudience = "https://localhost:4200",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authentication"))
                 };
             });
-// Add services to the container.
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("test", builder =>
+    {
+        builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().Build();
+    });
+});
 
 
 var app = builder.Build();

@@ -4,7 +4,7 @@ using Model;
 
 namespace DAL
 {
-    public class CheckChartContext : IdentityDbContext<User>
+    public class CheckChartContext : DbContext
     {
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Event> Events { get; set; }

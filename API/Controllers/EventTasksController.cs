@@ -2,11 +2,12 @@
 using BLL.ResponseDTO;
 using BLL_EF;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class EventTasksController : ControllerBase
     {
         readonly IEventTaskService eventTaskService;

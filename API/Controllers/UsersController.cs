@@ -1,11 +1,12 @@
 ﻿using BLL.BLLInterfaces;
 using BLL.ResponseDTO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class UsersController : ControllerBase
     {
         readonly IUserService userService;
@@ -33,7 +34,7 @@ namespace API.Controllers
             return userService.GetUsersFriends(userId);
         }
 
-        [HttpGet]
+        [HttpGet, AllowAnonymous]
         public IEnumerable<UserResponseDTO> GetAllUsers()
         {
             return userService.GetAllUsers();
@@ -75,7 +76,7 @@ namespace API.Controllers
             userService.ChangeUser(id, userRequest);
         }
 
-        [HttpPost]
+        [HttpPost, AllowAnonymous]
         public void AddUser([FromBody] UserRequestDTO userRequest)
         {
             userService.AddUser(userRequest);
