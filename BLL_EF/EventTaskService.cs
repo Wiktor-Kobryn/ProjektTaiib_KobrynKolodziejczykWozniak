@@ -117,7 +117,7 @@ namespace BLL_EF
         {
             var e = db.Events.Find(eventId);
             if (e == null)
-                throw new Exception("Brak eventu");
+                return null;
 
             
             var eventTasks = db.EventTasks.Where(i => i.EventId == eventId);
@@ -128,7 +128,7 @@ namespace BLL_EF
         {
             var u = db.Users.Find(userId);
             if (u == null)
-                throw new Exception("Brak uzytkownika");
+                return null;
 
             var eventTasks = db.EventTasks.Where(x => x.Users.Contains(u));
 
@@ -139,7 +139,7 @@ namespace BLL_EF
         {
             var e = db.EventTasks.Find(eventTaskId);
             if (e == null)
-                throw new Exception("Brak tasku");
+                return null;
 
             var coms = db.Comments.Where(i => i.EventTaskId == eventTaskId).ToList();
             return ToCommentResponseDTO(coms);

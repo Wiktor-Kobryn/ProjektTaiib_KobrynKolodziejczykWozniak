@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'adminpanel', component: AdminPanelComponent},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({

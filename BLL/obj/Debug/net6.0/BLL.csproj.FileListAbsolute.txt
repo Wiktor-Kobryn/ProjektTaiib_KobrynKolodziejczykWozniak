@@ -44,3 +44,33 @@ C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWoz
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\refint\BLL.dll
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.pdb
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\bin\Debug\net6.0\Model.dll
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\bin\Debug\net6.0\Model.pdb
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\Kuba\Desktop\TaiibProjekt\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\bin\Debug\net6.0\Model.dll
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\bin\Debug\net6.0\Model.pdb
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\Kuba\Desktop\Taiib_Projekt\ProjektTaiib_KobrynKolodziejczykWozniak\BLL\obj\Debug\net6.0\ref\BLL.dll

@@ -27,11 +27,11 @@
         </div>
         <div class="weeks">
             <div class="week" *ngFor="let week of weeks">
-                <div *ngFor="let day of week" class="day-cell" [ngClass]="{'completed': isDone(day),'disabled': !isEditorMode}" (click)="addActivity(day)">
+                <div *ngFor="let day of week" class="day-cell" [ngClass]="{'completed': isDone(day)}" (click)="addActivity(day)" >
                     <div >
                             {{ day ? (day | date: 'd') : '' }}
                      </div>
-                     <mat-icon class="day-icon-description" (click)="showDescription($event, day)">reviews</mat-icon>
+                     <mat-icon *ngIf="day!=null" class="day-icon-description" (click)="showDescription($event, day)">reviews</mat-icon>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
         {{choosedEvent.deadline | date:'dd.MM.yyyy'}}
     </div>
     <div class="activity-description-body">
-            {{choosedEvent.body}}
+        {{choosedEvent.body}}
     </div>
     <form class="comment-form">
         <mat-form-field class="comment-form-field">
@@ -60,11 +60,12 @@
                 <img [src]="getUserAvatar(c.userId)" alt="User avatar">
             </div>
             <div class="comment-body">
-               : {{c.body}}
+                : {{c.body}}
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="contributors">
     <div class="contributors-title">
@@ -75,9 +76,6 @@
             <div class="contributors-image">
                 <img [src]="c.image" alt="Contributor avatar">
             </div>
-        </div>
-        <div *ngIf="isEditorMode" class="contributors-add">
-            <input *ngIf="isCreator() && creator" type="button" id="addContributorButton" name="addContributorButton" value="+" (click)="addContributorButton()"/>
         </div>
     </div>
 </div>

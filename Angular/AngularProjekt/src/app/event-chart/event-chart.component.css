@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateX(-100px);
 }
 
 .task-title {
@@ -10,6 +11,7 @@
     font-family: Tahoma, Verdana, sens-serif;
     font-size: 30px;
     height: 30px;
+    transform: translateX(-45px);
 }
 
 .creator {
@@ -207,4 +209,62 @@
 
 .task-add :hover {
     background-color: #dd950e;
+}
+
+.comment-form {
+    margin-top: 10px;
+    position: absolute;
+    bottom: 30%;
+    right: 5%;
+    background-color: #a2d2ff;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.comment-form-field {
+    width: 100%;
+}
+
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 350px;
+    flex: 1;
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color: #6aaae6;
+}
+
+.comment-user {
+    position: relative;
+    left: 1%;
+}
+
+.comment-user img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 5px black solid;
+}
+
+.comment-body {
+    margin-left: 10px;
+    word-break: break-all;
+}
+
+.comment-form label {
+    color: white;
+    font-size: 32px;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }

@@ -153,6 +153,7 @@
     flex-direction: column;
     width: fit-content;
     height: fit-content;
+    
 }
 
 .creator-background {
@@ -162,6 +163,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 10px rgba(252, 7, 7, 0.2);
+    border-radius: 10px;
 }
 
 .creator-title {

@@ -31,6 +31,8 @@ namespace BLL_EF
             if (userB == null)
                 return false;
 
+            
+
             Friendship friendship = new()
             {
                 UserAId = friendshipRequest.UserAId,

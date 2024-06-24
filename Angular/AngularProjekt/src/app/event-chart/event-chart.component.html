@@ -49,7 +49,7 @@
 <div class="tasks-main">
     <div class="tasks-single" *ngIf="isEditorMode && isCreator() && creator">
         <div class="task-add">
-            <button (click)="addTask()">+</button>
+            <button (click)="addChartTask()">+</button>
         </div>
     </div>
     <div *ngFor="let task of eventTasks" class="tasks-single">
@@ -65,11 +65,28 @@
             <mat-icon>check_circle</mat-icon>
         </div>
         <div class="tasks-comment">
-            <button><mat-icon>comment</mat-icon></button>
+            <button (click)="openTaskComments(task)"><mat-icon>comment</mat-icon></button>
         </div>
     </div>
 </div>
 
-<div>
-</div>
-  
+<form class="comment-form" *ngIf="showComments">
+    <label><mat-icon>comment</mat-icon> {{chosenEventTask?.body}}</label>
+    <mat-form-field class="comment-form-field">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Add comment" class="comment-textarea" [(ngModel)]="commentText" name="commentText"></textarea>
+        <button matSuffix mat-icon-button (click)="addCommentToTask(chosenEventTask?.id ?? 0, commentText)">
+            <mat-icon>send</mat-icon>
+        </button>
+    </mat-form-field>
+    <div class="comments-section">
+        <div *ngFor="let c of commentsMap.get(chosenEventTask?.id ?? 0)" class="comment">
+            <div class="comment-user">
+                <img [src]="getUserAvatar(c.userId)" alt="User avatar">
+            </div>
+            <div class="comment-body">
+                : {{c.body}}
+            </div>
+        </div>
+    </div>
+</form> 

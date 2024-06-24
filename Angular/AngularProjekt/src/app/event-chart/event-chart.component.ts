@@ -15,6 +15,7 @@ import {
   ApexResponsive,
 } from 'ng-apexcharts';
 import { EventTaskResponseDTO } from '../model/event-task.interface';
+import { EventTaskActivityAddComponent } from '../event-task-activity-add/event-task-activity-add.component';
 
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
@@ -28,8 +29,10 @@ export type ChartOptions = {
   templateUrl: './event-chart.component.html',
   styleUrl: './event-chart.component.css'
 })
-export class EventChartComponent extends EventCommon implements OnInit{
+export class EventChartComponent extends EventCommon implements OnInit {
   public chartOptions!: ChartOptions;
+  public chosenEventTask?: EventTaskResponseDTO;
+  public showComments: boolean = false;
 
   constructor(private dateAdapter: DateAdapter<Date>, route: ActivatedRoute, userService: UserService, eventTasksService: EventTasksService,
     groupService: GroupsService, eventService: EventsService, commentService: CommentService, router: Router, dialog: MatDialog, cdr: ChangeDetectorRef) {
@@ -38,7 +41,7 @@ export class EventChartComponent extends EventCommon implements OnInit{
     this.createEventTaskChart();
   }
 
-  ngOnInit(): void {
+  override ngOnInit(): void  {
     this.startTimer()
     this.createEventTaskChart();
   }
@@ -133,6 +136,35 @@ export class EventChartComponent extends EventCommon implements OnInit{
           this.startTimer();
         }
       })
+    }
+  }
+
+  public addChartTask(): void {
+    var x = this.dialog.open(EventTaskActivityAddComponent, {
+      // the day of creation is date/time-now
+      data: { eventId: this.event.id, date: new Date()}
+    });
+    
+    x.afterClosed().subscribe(
+      res => {
+        if (res != null) {
+          this.eventTasksService.addTask(this.currentUserID, res).subscribe({
+            next: () => {
+              this.ngOnInit();
+            },
+            error: (err) => console.log(err)
+          })
+        }
+      }
+    )
+  }
+
+  public openTaskComments(eventTask: EventTaskResponseDTO): void {
+    if(this.chosenEventTask != null && this.chosenEventTask != undefined && this.chosenEventTask.id == eventTask.id) {
+        this.showComments = !this.showComments;
+    } else {
+      this.chosenEventTask = eventTask;
+      this.showComments = true;
     }
   }
 }
