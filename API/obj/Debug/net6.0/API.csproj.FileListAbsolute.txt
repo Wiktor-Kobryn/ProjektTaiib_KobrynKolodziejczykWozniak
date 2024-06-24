@@ -81,6 +81,10 @@ G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Deb
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BazaDanych.dll
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BDDAL.dll
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BDDAL.pdb
+G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BazaDanych.pdb
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\appsettings.json
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\API.exe
@@ -174,12 +178,6 @@ C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWoz
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\obj\Debug\net6.0\API.pdb
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\obj\Debug\net6.0\ref\API.dll
-<<<<<<< HEAD
-G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\DAL.dll
-G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\Model.dll
-G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\DAL.pdb
-G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\Model.pdb
-=======
 C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\API\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\API\bin\Debug\net6.0\appsettings.json
 C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\API\bin\Debug\net6.0\API.exe
@@ -376,4 +374,3 @@ C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWoz
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BLL_EF.dll
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BLL.pdb
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\API\bin\Debug\net6.0\BLL_EF.pdb
->>>>>>> origin/Wiktor

@@ -1,0 +1,164 @@
+{
+  "format": 1,
+  "restore": {
+    "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {}
+  },
+  "projects": {
+    "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Karol\\.nuget\\packages\\",
+        "outputPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
+                "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\Karol\\.nuget\\packages\\",
+        "outputPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
