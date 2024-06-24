@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "VCxMN1d3fySuWahWtMVdIZrHFbhOAP4wiH1kIxxtVbNK4b+NaqMlawbz8erOqUTYFVfxPBNIZMEeSKW5YkmZHQ==",
+=======
+  "dgSpecHash": "98Ma/iEPP0RjYoP6Q1URKksM0Nb5JerA4xizUAO3lN8FVqUG5b2+XaduxNFdJuLW//ksc05L2Vq1cUOzDm7V2w==",
+>>>>>>> origin/Wiktor
   "success": true,
   "projectFilePath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\API.csproj",
   "expectedPackageFiles": [

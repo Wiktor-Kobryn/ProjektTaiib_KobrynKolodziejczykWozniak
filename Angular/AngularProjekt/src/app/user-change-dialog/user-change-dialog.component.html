@@ -1,0 +1,21 @@
+<div class="main-block">
+    <h2 mat-dialog-title>Change Profile data</h2>
+    <div mat-dialog-actions>
+        <div class="main-container">
+            <div class="text-box">
+                <label for="login">login:</label>
+                <input id="login" name="login" type="text" [(ngModel)]="userRequest.login" />
+            </div>
+            <div class="text-box">
+                <label for="name">name:</label>
+                <input id="name" name="name" type="text" [(ngModel)]="userRequest.name" />
+            </div>
+            <div class="text-box">
+                <label for="image">image:</label>
+                <input id="image" name="image" type="text" [(ngModel)]="userRequest.image" />
+            </div>
+            <button class="options-button" mat-button [mat-dialog-close]="userRequest">SAVE <mat-icon>arrow_circle_right</mat-icon></button>
+            <button class="options-button" mat-button mat-dialog-close>UNDO <mat-icon>cancel_presentation</mat-icon></button>
+        </div>
+    </div>
+</div>

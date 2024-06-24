@@ -12,7 +12,7 @@ namespace Model
     {
         [Key, Column("ID")]
         public int Id { get; set; }
-        
+
         [MaxLength(50)]
         public string Name { get; set; }
 
@@ -21,10 +21,17 @@ namespace Model
         public Event Event { get; set; }
 
         [Required]
+<<<<<<< HEAD
         public ICollection<User> Users { get; set; }        
         public void Configure(EntityTypeBuilder<Group> builder)
         {
            // builder.HasOne(x => x.Event).WithOne(x => x.Group).OnDelete(DeleteBehavior.Restrict);
+=======
+        public ICollection<User> Users { get; set; } = new List<User>();
+        public void Configure(EntityTypeBuilder<Group> builder)
+        {
+           builder.HasOne(x => x.Event).WithOne(x => x.Group).OnDelete(DeleteBehavior.Restrict);
+>>>>>>> origin/Wiktor
         }
     }
 }

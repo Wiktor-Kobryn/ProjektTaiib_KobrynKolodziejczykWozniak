@@ -13,6 +13,7 @@ C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWoz
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.pdb
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.genruntimeconfig.cache
 C:\Users\wikto\Desktop\studia katowice\Taiib\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\ref\Model.dll
+<<<<<<< HEAD
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.deps.json
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.runtimeconfig.json
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.dll
@@ -27,3 +28,33 @@ G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\D
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.pdb
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.genruntimeconfig.cache
 G:\MOJEDOKUMENTY\ObrazyPipao\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\ref\Model.dll
+=======
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\bin\Debug\net6.0\Model.deps.json
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\bin\Debug\net6.0\Model.runtimeconfig.json
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\bin\Debug\net6.0\Model.dll
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\bin\Debug\net6.0\Model.pdb
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\Model.csproj.AssemblyReference.cache
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\Model.AssemblyInfoInputs.cache
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\Model.AssemblyInfo.cs
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\Model.csproj.CoreCompileInputs.cache
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\Model.dll
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\refint\Model.dll
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\Model.pdb
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\Model.genruntimeconfig.cache
+C:\Users\Kuba\Desktop\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\Model\obj\Debug\net6.0\ref\Model.dll
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.deps.json
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.runtimeconfig.json
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.dll
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\bin\Debug\net6.0\Model.pdb
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.csproj.AssemblyReference.cache
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.AssemblyInfoInputs.cache
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.AssemblyInfo.cs
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.csproj.CoreCompileInputs.cache
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.dll
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\refint\Model.dll
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.pdb
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\Model.genruntimeconfig.cache
+C:\Users\Kuba\Desktop\ProjektTaiib_Kuba\ProjektTaiib_KobrynKolodziejczykWozniak\Model\obj\Debug\net6.0\ref\Model.dll
+>>>>>>> origin/Wiktor

@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Model
 {
     [Table("USERS")]
-    public class User
+    public class User : IEntityTypeConfiguration<User>
     {
         [Key, Column("ID")]
         public int Id { get; set; }
@@ -32,6 +32,14 @@ namespace Model
         public ICollection<EventTask> EventTasks { get; set; }
         public ICollection<Event> Events { get; set; }
         public ICollection<Group> Groups { get; set; }
+<<<<<<< HEAD
+=======
+
+        public void Configure(EntityTypeBuilder<User> builder)
+        {
+            builder.HasMany(x => x.EventTasks).WithMany(x => x.Users);
+        }
+>>>>>>> origin/Wiktor
         //public IEnumerable<Friendship> Friendships { get; set; }
 
     }

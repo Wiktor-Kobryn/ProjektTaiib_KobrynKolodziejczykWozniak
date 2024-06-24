@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Add contributor to task</h2>
+<div mat-dialog-content> Select user or click cancel to exit dialog. </div>
+<div mat-dialog-actions>
+    <div *ngFor="let c of data">
+        <div class="contributors-image">
+            <button mat-button [mat-dialog-close]="c.id" class="contributors-button">
+                <img [src]="c.image" alt="Contributor avatar">
+            </button>
+        </div>
+    </div>
+    <button mat-button mat-dialog-close>Cancel</button>
+<div>
