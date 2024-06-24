@@ -19,6 +19,9 @@ import { EventTaskAddComponent } from "../event-task-add/event-task-add.componen
 
 @Directive()
 export abstract class EventCommon {
+  //do zmiany po dodaniu JWT
+  public currentUserID: number = 8;
+
   public event!: EventResponseDTO;
   public eventTasks: EventTaskResponseDTO[] = [];
   public commentsMap = new Map<number, CommentResponseDTO[]>();
@@ -29,14 +32,21 @@ export abstract class EventCommon {
   public isCommentIconClicked: boolean = false;
   public choosedId: number = -1;
   public isEditorMode: boolean = false;
+  public isGroupNamed: boolean = true;
   commentText: string = '';
+  public user!: UserResponseDTO;
 
   constructor(protected route: ActivatedRoute, protected userService: UserService, protected eventTasksService: EventTasksService,
     protected groupService: GroupsService, protected eventService: EventsService, protected commentService: CommentService, protected router: Router, protected dialog: MatDialog, protected cdr: ChangeDetectorRef) {
-    const eventId = route.snapshot.paramMap.get('eventId');
+      this.loadEventData();
+  }
+
+  public loadEventData(): void {
+    const eventId = this.route.snapshot.paramMap.get('eventId');
     if (eventId !== null) {
-      eventTasksService.getEventEventTasks(parseInt(eventId)).subscribe({
+      this.eventTasksService.getEventEventTasks(parseInt(eventId)).subscribe({
         next: (res) => {
+          this.getCurrentUser();
           this.eventTasks = res;
           this.getEventTaskContributors();
           this.getComments();
@@ -47,7 +57,6 @@ export abstract class EventCommon {
         error: (err) => console.log(err)
       });
     }
-
   }
 
   public getEvent(eventId: number): void {
@@ -84,6 +93,8 @@ export abstract class EventCommon {
       next: (res) => {
         if (res != null) {
           this.group = res
+          if(this.group.name == null || this.group.name == undefined || this.group.name == "")
+            this.isGroupNamed == false;
           this.getContributors(res.id);
         }
       },
@@ -116,8 +127,7 @@ export abstract class EventCommon {
   }
 
   public isCreator(): boolean {
-    if (1 == this.creator.id) {
-      this.isEditorMode = true;
+    if (this.currentUserID == this.creator.id) {
       return true;
     }
     else return false;
@@ -156,7 +166,7 @@ export abstract class EventCommon {
       res => {
         if (res != null) {
           console.log(res);
-          this.eventTasksService.addTask(1, res).subscribe({
+          this.eventTasksService.addTask(this.currentUserID, res).subscribe({
             next: () => {
               this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
                 this.router.navigate(['/event/'+this.getEventTypeText(this.event.type), this.event.id]);
@@ -186,7 +196,7 @@ export abstract class EventCommon {
     console.log(this.commentText);
     if (this.commentText != '') {
       this.commentRequest = {
-        userId: 1,
+        userId: this.currentUserID,
         eventTaskId: eventTaskId,
         body: this.commentText
       }
@@ -201,8 +211,6 @@ export abstract class EventCommon {
     }
   }
 
- 
-
   public summary(): number[] {
     var numbers: number[] = [0, 0, 0];
     this.eventTasks.forEach(event => {
@@ -216,7 +224,8 @@ export abstract class EventCommon {
   }
 
   public toggleMode(): void {
-    this.isEditorMode = !this.isEditorMode;
+    if(this.isCreator())
+      this.isEditorMode = !this.isEditorMode;
   }
 
   public finishTask(eventTaskId: number) {
@@ -229,7 +238,7 @@ export abstract class EventCommon {
     })
   }
 
-  public addContributor(): void {
+  public addContributorButton(): void {
 
   }
 
@@ -245,6 +254,20 @@ export abstract class EventCommon {
         return 'Activity';
       default:
         return '';
+    }
+  }
+
+  private getCurrentUser(): void {
+
+    //tu pobranie ID uzytkownika z tokenu JWT !!!
+
+    if(this.currentUserID != null) {
+      this.userService.getUser(this.currentUserID).subscribe({
+        next: (res) => {
+          this.user = res;
+        },
+        error: (err) => console.log('Error fetching logged user: ', err)
+      });
     }
   }
 }

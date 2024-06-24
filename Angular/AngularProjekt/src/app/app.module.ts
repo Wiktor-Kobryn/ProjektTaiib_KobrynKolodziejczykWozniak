@@ -18,7 +18,7 @@ import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ProfileComponent } from './profile/profile.component';
 import { EventActivityComponent } from './event-activity/event-activity.component';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core'
 import { EventTaskActivityAddComponent } from './event-task-activity-add/event-task-activity-add.component';
 import { FriendsAddComponent } from './friends-add/friends-add.component';
 import { UserChangeDialogComponent } from './user-change-dialog/user-change-dialog.component';
@@ -26,6 +26,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EventChartComponent } from './event-chart/event-chart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { EventChartComponent } from './event-chart/event-chart.component';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgApexchartsModule
   ],
   providers: [
     provideAnimationsAsync()

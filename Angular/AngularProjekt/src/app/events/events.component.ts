@@ -16,7 +16,7 @@ import { EventRequestDTO } from '../model/eventRequest.interface';
 })
 export class EventsComponent {
     //ZMIENIC POTEM JEDYNKI NA USERID POBRANE Z AUTORYZACJI
-    public currentUser: number = 8;
+    public currentUser: number = 1;
     public events: EventResponseDTO[] = [];
     public eventSizeOfContributors = new Map<EventResponseDTO, number>();
     public eventCreators = new Map<EventResponseDTO, number>();

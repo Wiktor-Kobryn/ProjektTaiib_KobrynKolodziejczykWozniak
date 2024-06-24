@@ -1,1 +1,75 @@
-<p>event-chart works!</p>
+<div *ngIf="creator" class="creator">
+    <div class="creator-title">
+        Creator:
+    </div> 
+    <div class="creator-background">
+        <div class="creator-image">
+            <img [src]="creator.image"alt="Creator avatar">
+        </div>
+        <div class="creator-name">
+           {{creator.login}}
+        </div>
+    </div>
+</div>
+
+<div class="chart-area">
+    <div *ngIf="event" class="task-title" >
+        {{event.title}}
+    </div>
+    
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [responsive]="chartOptions.responsive"
+      [labels]="chartOptions.labels">
+    </apx-chart>
+</div>
+
+<div class="contributors">
+    <div class="contributors-title">
+        <mat-icon>group</mat-icon>
+        <label> {{this.isGroupNamed ? 'Contributors' : this.group?.name}}</label>
+    </div> 
+    <div class="contributors-background">
+        <div *ngFor="let c of contributors">
+            <div class="contributors-image">
+                <img [src]="c.image" alt="Contributor avatar">
+            </div>
+        </div>
+        <div *ngIf="isEditorMode" class="contributors-add">
+            <input *ngIf="isCreator() && creator" type="button" id="addContributorButton" name="addContributorButton" value="+" (click)="addContributorButton()"/>
+        </div>
+    </div>
+</div>
+
+<div class="editorButton"> 
+    <button mat-flat-button (click)="toggleMode()" [ngClass]="{'guest': !isEditorMode}">{{ !isEditorMode ? 'Current: guest mode' : 'Current: editor mode' }}</button>
+</div>
+
+<div class="tasks-main">
+    <div class="tasks-single" *ngIf="isEditorMode && isCreator() && creator">
+        <div class="task-add">
+            <button (click)="addTask()">+</button>
+        </div>
+    </div>
+    <div *ngFor="let task of eventTasks" class="tasks-single">
+        <label class="tasks-single-title">{{task.body}}</label>
+        <div>
+            <mat-icon>person_outline</mat-icon>
+            <label> {{getTaskContributorsCount(task)}}</label>
+        </div>
+        <div *ngIf="!isEditorMode && checkIfUserCanVote(task)" class="vote">
+            <button (click)="voteEventTask(task)">VOTE</button>
+        </div>
+        <div *ngIf="isEditorMode || (!isEditorMode && !checkIfUserCanVote(task))" class="vote">
+            <mat-icon>check_circle</mat-icon>
+        </div>
+        <div class="tasks-comment">
+            <button><mat-icon>comment</mat-icon></button>
+        </div>
+    </div>
+</div>
+
+<div>
+</div>
+  
