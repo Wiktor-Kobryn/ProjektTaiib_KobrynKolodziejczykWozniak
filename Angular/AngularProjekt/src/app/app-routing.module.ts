@@ -10,7 +10,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EventChartComponent } from './event-chart/event-chart.component';
-
+import { SignUpComponent } from './sign-up/sign-up.component';
 const routes: Routes = [
   {path: 'dashboard', component: EventsComponent},
   {path: 'event/eventTask/add/:eventId', component: EventTaskAddComponent},
@@ -22,6 +22,7 @@ const routes: Routes = [
   {path: 'adminpanel', component: AdminPanelComponent},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignUpComponent},
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];
 

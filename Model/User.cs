@@ -16,7 +16,7 @@ namespace Model
         [Required, MaxLength(50)]
         public string Login { get; set; }
 
-        [Required, MaxLength(50)]
+        [Required, MaxLength(500)]
         public string Password { get; set; }
 
         [MaxLength(50)]

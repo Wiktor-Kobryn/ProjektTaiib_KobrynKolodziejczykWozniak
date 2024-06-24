@@ -183,7 +183,7 @@ namespace BLL_EF
             {
                 Login = userRequest.Login,
                 Name = userRequest.Name,
-                Password = GetHashString(userRequest.Password), // HASHOWANIE HASŁA - KAROL !!!
+                Password = GetHashString(userRequest.Password), // HASHOWANIE HASŁA - KAROL !!! // ;)
                 IsAdmin = userRequest.IsAdmin,
                 Image = userRequest.Image
             };

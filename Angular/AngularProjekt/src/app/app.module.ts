@@ -26,7 +26,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EventChartComponent } from './event-chart/event-chart.component';
-
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { EventChartComponent } from './event-chart/event-chart.component';
     AdminPanelComponent,
     HomeComponent,
     LoginComponent,
-    EventChartComponent
+    EventChartComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
