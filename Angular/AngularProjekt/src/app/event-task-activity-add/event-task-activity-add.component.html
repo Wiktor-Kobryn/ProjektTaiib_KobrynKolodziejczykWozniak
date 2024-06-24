@@ -3,12 +3,8 @@
 <div class="form-fields">
     <mat-form-field class="body-field">
         <mat-label>Body</mat-label>
-        <input type="text" matInput placeholder="Insert body" [(ngModel)]="eventTaskRequest.body" required>
+        <input type="text" matInput placeholder="Insert body" [(ngModel)]="eventTaskRequest.body">
     </mat-form-field><br/>
-    <mat-form-field class="date-field">
-        <mat-label>Deadline</mat-label>
-        <input type="datetime-local" matInput placeholder="Insert body" [(ngModel)]="eventTaskRequest.deadline" required>
-    </mat-form-field>
 </div>
 <div mat-dialog-actions>
     <button mat-button [mat-dialog-close]="eventTaskRequest" class="contributors-button">Submit</button>

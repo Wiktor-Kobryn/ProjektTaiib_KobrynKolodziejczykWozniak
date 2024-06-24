@@ -30,9 +30,6 @@ namespace BLL_EF
             if (e == null)
                 return false;
 
-            if(eventTaskRequest.Deadline < DateTime.Now)
-                return false;
-
             ICollection<User> users = new List<User>();
             users.Add(u);
 

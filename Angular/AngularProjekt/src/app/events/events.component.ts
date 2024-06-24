@@ -16,13 +16,13 @@ import { EventRequestDTO } from '../model/eventRequest.interface';
 })
 export class EventsComponent {
     //ZMIENIC POTEM JEDYNKI NA USERID POBRANE Z AUTORYZACJI
-    public currentUser: number = 1;
+    public currentUser: number = 8;
     public events: EventResponseDTO[] = [];
     public eventSizeOfContributors = new Map<EventResponseDTO, number>();
     public eventCreators = new Map<EventResponseDTO, number>();
     public eventRequest: EventRequestDTO = {
       title: "",
-      userId: 1,
+      userId: this.currentUser,
       type: EventType.activity
     }
   
@@ -58,7 +58,7 @@ export class EventsComponent {
     }
   
     private getEventsByUser(): Observable<EventResponseDTO[]> {
-      return this.eventsService.getUserEvents(1);
+      return this.eventsService.getUserEvents(this.currentUser);
     }
   
     private getEventsByGroup(): Observable<EventResponseDTO[]> {
@@ -102,8 +102,8 @@ export class EventsComponent {
       })
     }
   
-    public navigateToDetails(eventId: number): void {
-      this.router.navigate(['/event/', eventId]);
+    public navigateToDetails(eventId: number, eventType: string): void {
+      this.router.navigate(['/event/'+eventType, eventId]);
     }
   
     public isOwner(eventId: number, userId: number): boolean {

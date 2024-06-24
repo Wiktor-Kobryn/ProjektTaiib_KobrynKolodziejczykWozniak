@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div *ngIf="isEditorMode" class="task-add-contributors">
-                    <input type="button" id="addTask" name="addTask" value="+" (click)="addContributorToTask(e.id, e.body)">
+                    <input type="button" id="addTask" name="addTask" value="+" (click)="addContributorToTask(e.id)">
                 </div>
                 <div class="task-add-comment">
                     <button mat-icon-button (click)="showCommentInput(e.id)">
@@ -74,7 +74,7 @@
 
 <div class="contributors">
     <div class="contributors-title">
-        <mat-icon>group</mat-icon>Contributors:
+        <mat-icon>group</mat-icon>{{group?.name}}
     </div> 
     <div class="contributors-background">
         <div *ngFor="let c of contributors">
