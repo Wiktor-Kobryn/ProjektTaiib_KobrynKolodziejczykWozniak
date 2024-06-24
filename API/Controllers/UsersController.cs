@@ -46,7 +46,7 @@ namespace API.Controllers
             return userService.GetUsersByName(name);
         }
 
-        [HttpGet("{id}"), AllowAnonymous]
+        [HttpGet("{id}"), AllowAnonymous    ]
         public UserResponseDTO GetUser(int id)
         {
             return userService.GetUser(id);
