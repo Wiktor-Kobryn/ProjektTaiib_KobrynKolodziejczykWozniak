@@ -3084,19 +3084,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-<<<<<<< HEAD
+            "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj": {
+              "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj"
+            },
+            "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj": {
+              "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj"
+            },
             "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {
               "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj"
-=======
-            "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL\\BLL.csproj"
-            },
-            "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj": {
-              "projectPath": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\BLL_EF\\BLL_EF.csproj"
-            },
-            "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\wikto\\Desktop\\studia katowice\\Taiib\\ProjektTaiib_KobrynKolodziejczykWozniak\\DAL\\DAL.csproj"
->>>>>>> origin/Wiktor
             },
             "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj": {
               "projectPath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\Model\\Model.csproj"
@@ -3160,5 +3155,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Wystąpił problem podczas czytania pliku pamięci podręcznej G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

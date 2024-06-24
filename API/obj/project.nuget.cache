@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "VCxMN1d3fySuWahWtMVdIZrHFbhOAP4wiH1kIxxtVbNK4b+NaqMlawbz8erOqUTYFVfxPBNIZMEeSKW5YkmZHQ==",
-=======
-  "dgSpecHash": "98Ma/iEPP0RjYoP6Q1URKksM0Nb5JerA4xizUAO3lN8FVqUG5b2+XaduxNFdJuLW//ksc05L2Vq1cUOzDm7V2w==",
->>>>>>> origin/Wiktor
+  "dgSpecHash": "cz8XLNovCMqby42Wud8qz7MwxeWnQkrOTz2VbVY4oKZA4LUNPX9ZLj1SGOSP/H+JO/l6w19pmJ7Y6IA2zyWEDA==",
   "success": true,
   "projectFilePath": "G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -76,5 +72,12 @@
     "C:\\Users\\Karol\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Karol\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Wystąpił problem podczas czytania pliku pamięci podręcznej G:\\MOJEDOKUMENTY\\ObrazyPipao\\ProjektTaiib_KobrynKolodziejczykWozniak\\API\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
