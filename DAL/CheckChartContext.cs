@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Model;
 
 namespace DAL
 {
-    public class CheckChartContext : DbContext
+    public class CheckChartContext : IdentityDbContext<User>
     {
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Event> Events { get; set; }

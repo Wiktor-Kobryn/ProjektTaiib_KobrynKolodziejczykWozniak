@@ -16,20 +16,7 @@ namespace BLL_EF
  
     public class UserService : IUserService
     {
-        internal static byte[] GetHash(string inputString)
-        {
-            using (HashAlgorithm algorithm = SHA256.Create())
-                return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
-        }
-
-        internal static string GetHashString(string inputString)
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (byte b in GetHash(inputString))
-                sb.Append(b.ToString("X2"));
-
-            return sb.ToString();
-        }
+   
         private readonly CheckChartContext db;
 
         public UserService(CheckChartContext db)
@@ -183,7 +170,7 @@ namespace BLL_EF
             {
                 Login = userRequest.Login,
                 Name = userRequest.Name,
-                Password = GetHashString(userRequest.Password), // HASHOWANIE HASŁA - KAROL !!! // ;)
+                Password = Krypto.GetHashString(userRequest.Password), // HASHOWANIE HASŁA - KAROL !!! // ;)
                 IsAdmin = userRequest.IsAdmin,
                 Image = userRequest.Image
             };
