@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsComponent } from './events/events.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EventTaskComponent } from './event-task/event-task.component';
 import { EventTaskAddComponent } from './event-task-add/event-task-add.component';
@@ -27,6 +26,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EventChartComponent } from './event-chart/event-chart.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthInterceptor } from './auth.interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
+export function tokenGetter() {
+  return localStorage.getItem("jwt");
+}
 
 @NgModule({
   declarations: [
@@ -57,10 +63,21 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:7123"]
+      }
+    })
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
