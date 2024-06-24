@@ -23,6 +23,9 @@ import { EventTaskActivityAddComponent } from './event-task-activity-add/event-t
 import { FriendsAddComponent } from './friends-add/friends-add.component';
 import { UserChangeDialogComponent } from './user-change-dialog/user-change-dialog.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { EventChartComponent } from './event-chart/event-chart.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     EventTaskActivityAddComponent,
     FriendsAddComponent,
     UserChangeDialogComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    HomeComponent,
+    LoginComponent,
+    EventChartComponent
   ],
   imports: [
     BrowserModule,
