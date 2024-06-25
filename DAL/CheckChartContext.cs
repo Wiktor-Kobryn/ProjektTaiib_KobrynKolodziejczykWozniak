@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Model;
 
 namespace DAL
@@ -16,7 +17,7 @@ namespace DAL
         {
 
             optionsBuilder
-                .UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Kuba\\Desktop\\ProjektTaiib_KobrynKolodziejczykWozniakMOJE\\ProjektTaiib_KobrynKolodziejczykWozniak-Wiktor\\CheckChartDB.mdf;Integrated Security=True;Connect Timeout=30");
+                .UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Kuba\\Desktop\\ProjektTaiib_Kuba\\ProjektTaiib_KobrynKolodziejczykWozniak\\CheckChartDB.mdf;Integrated Security=True;Connect Timeout=30");
         }
     }
 }

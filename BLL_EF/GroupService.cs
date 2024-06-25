@@ -20,7 +20,7 @@ namespace BLL_EF
             this.db = db;
         }
 
-        public bool AddGroup(GroupRequestDTO groupRequest)
+        public bool AddGroup(GroupRequestDTO groupRequest, int creatorId)
         {
             var e = db.Events.Find(groupRequest.EventId);
             if (e == null)
@@ -35,6 +35,17 @@ namespace BLL_EF
             db.Groups.Add(group);
             db.SaveChanges();
             e.GroupId = group.Id;
+            db.SaveChanges();
+
+            var group2 = db.Groups.Find(group.Id);
+            if (group2 == null)
+                return false;
+
+            var user = db.Users.Find(creatorId);
+            if (user == null)
+                return false;
+
+            group2.Users.Add(user);
             db.SaveChanges();
             return true;
         }
@@ -81,6 +92,7 @@ namespace BLL_EF
                 return false;
             e.GroupId = null;
             db.SaveChanges();
+            group.Users.Clear();
             db.Groups.Remove(group);
             db.SaveChanges();
             return true;
@@ -90,9 +102,10 @@ namespace BLL_EF
         {
             var e = db.Events.Find(eventId);
             if (e == null)
-                throw new Exception("Brak eventu");
+                return null;
 
-            Group g = db.Groups.Where(g => g.EventId == eventId).First();
+            Group g = db.Groups.Where(g => g.EventId == eventId).FirstOrDefault();
+            if (g == null) return null;
             return ToGroupResponseDTO(g);
         }
 
@@ -100,9 +113,10 @@ namespace BLL_EF
         {
             var user = db.Users.Find(userId);
             if (user == null)
-                throw new Exception("Brak uzytkownika");
-            
+                return null;
+
             var g = db.Groups.Where(u=>u.Users.Contains(user));
+            if (g == null) return null;
             return ToGroupsResponseDTO(g);
         }
 

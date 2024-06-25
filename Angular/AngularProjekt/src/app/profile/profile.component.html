@@ -1,0 +1,52 @@
+<div class="admin-section" *ngIf="user.isAdmin">
+    <button class="admin-section-button" (click)="navigateToAdminPanel()">Admin Panel</button>
+</div>
+
+<div class="user-profile">
+    <div class="user-info">
+        <ng-container *ngIf="user.isAdmin">
+            <mat-icon class="admin-icon">star</mat-icon>
+        </ng-container> 
+
+        <img [src]="user.image" alt="Contributor avatar" class="user-image">
+        <br />
+        <div class="user-login">
+            {{user.login}}
+            <button mat type="button" (click)="editUserData()"><mat-icon class="edit-icon">edit</mat-icon></button>
+        </div>
+        <p class="user-name">~ {{user.name}} ~</p>
+    </div>
+</div>
+
+<div class="tasks">
+    <div class="tasks-title">
+        <mat-icon>library_add_check</mat-icon>
+        <label> Tasks near deadline</label>
+    </div> 
+    <div class="tasks-body">
+        <tr *ngFor="let task of eventTasks" class="tasks-row">
+            <ng-container *ngIf="creationDateCheck(task.creationDate)">
+                <td><mat-icon>play_arrow</mat-icon></td>
+                <td class="tasks-col">{{task.body}}</td>
+                <td>{{task.creationDate | date:"longDate"}}</td>
+            </ng-container>
+        </tr>
+    </div>
+</div>
+
+<div class="friends">
+    <div class="friends-title">
+        <label>Friends </label>
+        <mat-icon>group</mat-icon>
+    </div> 
+    <div class="friends-background">
+        <div class="friends-add">
+            <button mat type="button" (click)="navigateToAddFriend()">+</button>
+        </div>
+        <div *ngFor="let f of friends">
+            <div class="friends-image">
+                <img [src]="f.image" alt="Contributor avatar">
+            </div>
+        </div>
+    </div>
+</div>

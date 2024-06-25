@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BLL_EF
@@ -69,6 +70,7 @@ namespace BLL_EF
             }
 
             var g = db.Groups.Find(e.GroupId);
+            
             if (g != null) db.Groups.Remove(g);
             db.SaveChanges();
             db.Events.Remove(e);
@@ -76,12 +78,23 @@ namespace BLL_EF
             return true;
         }
 
+        public int GetContributorsSize(int eventId)
+        {
+            var g = db.Groups.FirstOrDefault(g => g.EventId == eventId);
+            if (g == null)
+                return 1;
+
+            var users = db.Users.Where(u => u.Groups.Contains(g)).ToList();
+            if (users == null)
+                throw new Exception("Blad");
+            return users.Count;
+        }
+
         public EventResponseDTO GetGroupEvent(int groupId)
         {
             var g = db.Groups.Find(groupId);
             if (g == null)
-                throw new Exception("Brak grupy");
-
+                return null;
             var e = db.Events.Where(ev=>ev.GroupId==groupId).First();
             return ToEventResponseDTO(e);
         }
@@ -90,10 +103,17 @@ namespace BLL_EF
         {
             var u = db.Users.Find(userId);
             if(u == null)
-                throw new Exception("Brak uzytkownika");
-
+                return null;
             var events = db.Events.Where(ev => ev.UserId == userId);
             return ToEventsResponseDTO(events);
+        }
+
+        public EventResponseDTO GetEvent(int eventId) 
+        { 
+            var e = db.Events.FirstOrDefault(e => e.Id == eventId);
+            if (e == null)
+                return null;
+            return ToEventResponseDTO(e);
         }
 
         EventResponseDTO ToEventResponseDTO(Event ev)

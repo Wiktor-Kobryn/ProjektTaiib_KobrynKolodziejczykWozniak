@@ -1,0 +1,57 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: hidden;
+  }
+
+  .main-block {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: hidden;
+  }
+  
+  .text-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .text-box label {
+    width: 100px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  .text-box input {
+    font-size: 20px;
+    padding: 5px;
+    width: 200px;
+  }
+  
+  .mat-dialog-title {
+    text-align: center;
+  }
+  
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  
+  .mat-button {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+
+  .options-button {
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+  }
+  

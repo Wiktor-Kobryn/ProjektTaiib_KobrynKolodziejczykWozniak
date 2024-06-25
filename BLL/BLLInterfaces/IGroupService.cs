@@ -9,7 +9,7 @@ namespace BLL.BLLInterfaces
 {
     public interface IGroupService
     {
-        bool AddGroup(GroupRequestDTO groupRequest);
+        bool AddGroup(GroupRequestDTO groupRequest, int creatorId);
         bool ChangeGroupName(int groupId, string name);
         bool DeleteGroup(int groupId);
         GroupResponseDTO GetEventGroup(int eventId);

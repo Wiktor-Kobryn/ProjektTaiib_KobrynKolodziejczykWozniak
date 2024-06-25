@@ -1,0 +1,89 @@
+<div *ngIf="creator" class="creator">
+    <div class="creator-title">
+        Creator:
+    </div> 
+    <div class="creator-background">
+        <div class="creator-image">
+            <img [src]="creator.image"alt="Creator avatar">
+        </div>
+        <div class="creator-name">
+           {{creator.login}}
+        </div>
+    </div>
+</div>
+
+<div class="main-task-container">
+    <div *ngIf="event" class="task-title" >
+        {{event.title}}
+    </div>
+    <div class="calendar">
+        <div class="header">
+            <button (click)="previousMonth()">&#60;</button>
+            <span>{{ currentMonth | date: 'MMMM yyyy' }}</span>
+            <button (click)="nextMonth()">&#62;</button>
+        </div>
+        <div class="weekdays">
+            <div *ngFor="let day of ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']" class="day">{{ day }}</div>
+        </div>
+        <div class="weeks">
+            <div class="week" *ngFor="let week of weeks">
+                <div *ngFor="let day of week" class="day-cell" [ngClass]="{'completed': isDone(day)}" (click)="addActivity(day)" >
+                    <div >
+                            {{ day ? (day | date: 'd') : '' }}
+                     </div>
+                     <mat-icon *ngIf="day!=null" class="day-icon-description" (click)="showDescription($event, day)">reviews</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isCommentIconClicked" class="activity-description">
+    <div class="activity-description-date">
+        {{choosedEvent.deadline | date:'dd.MM.yyyy'}}
+    </div>
+    <div class="activity-description-body">
+        {{choosedEvent.body}}
+    </div>
+    <form class="comment-form">
+        <mat-form-field class="comment-form-field">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput placeholder="Add comment" class="comment-textarea" [(ngModel)]="commentText" name="commentText"></textarea>
+            <button matSuffix mat-icon-button (click)="addCommentToTask(choosedEvent.id , commentText)">
+                <mat-icon>send</mat-icon>
+            </button>
+        </mat-form-field>
+    </form>
+    <div class="comments-section">
+        <div *ngFor="let c of commentsMap.get(choosedEvent.id)" class="comment">
+            <div class="comment-user">
+                <img [src]="getUserAvatar(c.userId)" alt="User avatar">
+            </div>
+            <div class="comment-body">
+                : {{c.body}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contributors">
+    <div class="contributors-title">
+        <mat-icon>group</mat-icon>{{group?.name}}
+    </div> 
+    <div class="contributors-background">
+        <div *ngFor="let c of contributors">
+            <div class="contributors-image">
+                <img [src]="c.image" alt="Contributor avatar">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isCreator" class="editorButton"> 
+    <button mat-flat-button (click)="toggleMode()" [ngClass]="{'guest': !isEditorMode}">{{ !isEditorMode ? 'Current: guest mode' : 'Current: editor mode' }}</button>
+</div>
+
+
+
+  

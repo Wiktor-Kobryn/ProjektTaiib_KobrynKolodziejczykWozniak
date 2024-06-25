@@ -1,0 +1,194 @@
+.userProfile {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.friends {
+    position: absolute;
+    right: 2%;
+    bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 125px;
+    max-width: 590px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+    
+.friends-title {
+    font-size: 30px;
+    color: #a2d2ff;
+    font-weight: bolder;
+}
+    
+.friends-background {
+    border-radius: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #a2d2ff;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 10px #a2d2ff;
+    margin-top: 10px;
+    height: 68px;
+}
+    
+.friends-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: solid 5px white;
+}
+    
+.friends-add button {
+    font-size: 20px;
+    border-radius: 50%;
+    background-color:#a2d2ff;
+    border: solid 5px white;
+    box-shadow: 0 0 10px rgba(17, 74, 230, 0.61);
+    color: white;
+    font-size: 25px;
+    padding-left: 7px;
+    padding-right: 8px;
+}
+
+.friends-add :hover {
+    background-color: rgb(100, 175, 245);
+}
+
+
+.tasks {
+    position: absolute;
+    left: 2%;
+    bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    max-height: 290px;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+    
+.tasks-title {
+    font-size: 30px;
+    color: #fde442;
+    font-weight: bolder;
+}
+    
+.tasks-body {
+    border-radius: 10px;
+    align-items: left;
+    background-color: #fde442;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px #ecea5b;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    min-height: 85px;
+}
+    
+.tasks-row {
+    margin-top: 1px;
+    margin-left: 10px;
+    margin-right: 15px;
+    vertical-align: top;
+    text-align: left;
+    
+}
+
+.tasks-col {
+    min-width: 200px;
+}
+
+.admin-section {
+    text-align: right;
+    padding: 10px;
+}
+
+.admin-section-button {
+    background-color: #ff845c;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.admin-icon {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    color: #ffd700;
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    transform: translateY(5px);
+}
+
+.user-info {
+    text-align: center;
+    position: relative;
+}
+
+.user-image {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    display: inline-block;
+    background-repeat: repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 5px solid #a2d2ff;
+}
+
+.user-login {
+    background-color: #a2d2ff;
+    color: #0081cc;
+    border-radius: 20px;
+    padding: 15px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.user-login button {
+    background-color: transparent;
+    border: none;
+}
+
+.user-login :hover {
+    color: white;
+}
+
+.edit-icon {
+    margin-left: 10px;
+    font-size: 25px;
+    color: #0081cc;
+    cursor: pointer;
+}
+
+.user-name {
+    font-size: 22px;
+    color: #0099cc;
+    margin: 0;
+}

@@ -1,0 +1,111 @@
+<div *ngIf="creator" class="creator">
+    <div class="creator-title">
+        Creator:
+    </div> 
+    <div class="creator-background">
+        <div class="creator-image">
+            <img [src]="creator.image"alt="Creator avatar">
+        </div>
+        <div class="creator-name">
+           {{creator.login}}
+        </div>
+    </div>
+</div>
+
+<div class="main-task-container">
+    <div class="centered-task-container">
+        <div *ngIf="event" class="task-title" >
+            {{event.title}}
+        </div>
+        <div *ngFor="let e of eventTasks" class="task-container">
+            <div class="task-item">
+                <div class="task-status" [ngClass]="{'open': !e.isFinished, 'completed': e.isFinished, 'overDeadline': isOverDeadline(e), 'disabled': !isEditorMode}" (click)="finishTask(e.id)"></div>
+                <div class="task-body">
+                    {{ e.body }}
+                </div>
+                <div class="task-date">
+                    &lt; Deadline: {{ e.deadline | date:'dd.MM.yyyy HH:mm' }}
+                </div>
+                <div class="task-users">
+                    <div *ngFor="let c of eventTaskContributors.get(e.id)" class="task-contributors">
+                        <div class="task-contributors-image">
+                        <img [src]="c.image" alt="User avatar">
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="isEditorMode" class="task-add-contributors">
+                    <input type="button" id="addTask" name="addTask" value="+" (click)="addContributorToTask(e.id)">
+                </div>
+                <div class="task-add-comment">
+                    <button mat-icon-button (click)="showCommentInput(e.id)">
+                        <mat-icon>comment</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="isCommentIconClicked && choosedId==e.id" class="add-comment">
+                <form class="comment-form">
+                    <mat-form-field class="comment-form-field">
+                        <mat-label>Leave a comment</mat-label>
+                        <textarea matInput placeholder="Add comment" class="comment-textarea" [(ngModel)]="commentText" name="commentText"></textarea>
+                        <button matSuffix mat-icon-button (click)="addCommentToTask(e.id, commentText)">
+                            <mat-icon>send</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="comments-section">
+                <div *ngFor="let c of commentsMap.get(e.id)" class="comment">
+                    <div class="comment-user">
+                        <img [src]="getUserAvatar(c.userId)" alt="User avatar">
+                    </div>
+                    <div class="comment-body">
+                       : {{c.body}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isEditorMode" class="button-add">
+        <label for="addTask">ADD TASK</label>
+        <input *ngIf="isCreator() && creator" type="button" id="addTask" name="addTask" value="+" (click)="addTask()">
+    </div>
+</div>
+
+
+<div class="contributors">
+    <div class="contributors-title">
+        <mat-icon>group</mat-icon>{{group?.name}}
+    </div> 
+    <div class="contributors-background">
+        <div *ngFor="let c of contributors">
+            <div class="contributors-image">
+                <img [src]="c.image" alt="Contributor avatar">
+            </div>
+        </div>
+        <div *ngIf="isEditorMode" class="contributors-add">
+            <input *ngIf="isCreator() && creator" type="button" id="addContributor" name="addContributor" value="+" (click)="addContributorButton()"/>
+        </div>
+    </div>
+</div>
+
+<div class="summary">
+    <div class="summary-title">
+        Summary<mat-icon>trending_up</mat-icon>
+    </div> 
+    <div class="summary-background">
+        <div class="summary-headers">
+            <div>Unfinished</div>
+            <div>Finished</div>
+            <div>Overdue</div>
+        </div>
+        <div class="summary-values">
+            <div>{{summary().at(0)}}</div>
+            <div>{{summary().at(1)}}</div>
+            <div>{{summary().at(2)}}</div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isCreator" class="editorButton"> 
+    <button mat-flat-button (click)="toggleMode()" [ngClass]="{'guest': !isEditorMode}">{{ !isEditorMode ? 'Current: guest mode' : 'Current: editor mode' }}</button>
+</div>

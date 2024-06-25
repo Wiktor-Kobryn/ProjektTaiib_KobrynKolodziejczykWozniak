@@ -1,0 +1,166 @@
+.add-event-form {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    background-color: #ff865e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-content {
+    width: 100%;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+
+.add-circle-icon {
+    font-size: 24px;
+    color: white;
+    margin-right: 10px;
+}
+
+.add-event-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.label-form {
+    color: white;
+}
+
+.type-selector {
+    display: flex;
+    align-items: center;
+}
+
+.type-button {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.create-button {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.create-button mat-icon {
+    margin-left: 5px;
+}
+
+.main-events-container {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    width: 70%;
+    padding: 20px;
+}
+
+.event-container {
+    display: flex;
+    justify-content: center;
+}
+
+.event-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.event-header mat-icon {
+    font-size: 24px;
+}
+
+.event-type {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.event-type-icon {
+    color: white;
+}
+
+.star-icon.hidden {
+    visibility:hidden;
+}
+
+.star-icon {
+    color: white;
+}
+
+.event-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.event-person {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.event-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-icon,
+.details-icon {
+    cursor: pointer;
+    color: black;
+}
+
+.participants {
+    margin-left: 5px;
+}
+
+.delete-icon.hidden {
+    visibility: hidden;
+}
+
+.event-card.this-user-event {
+    background-color: #a2d2ff;
+}
+
+.event-card.not-this-user-event {
+    background-color: #fde442;
+}
