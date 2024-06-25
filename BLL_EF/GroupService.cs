@@ -102,7 +102,7 @@ namespace BLL_EF
         {
             var e = db.Events.Find(eventId);
             if (e == null)
-                throw new Exception("Brak eventu");
+                return null;
 
             Group g = db.Groups.Where(g => g.EventId == eventId).First();
             return ToGroupResponseDTO(g);
@@ -112,8 +112,8 @@ namespace BLL_EF
         {
             var user = db.Users.Find(userId);
             if (user == null)
-                throw new Exception("Brak uzytkownika");
-            
+                return null;
+
             var g = db.Groups.Where(u=>u.Users.Contains(user));
             return ToGroupsResponseDTO(g);
         }

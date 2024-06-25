@@ -12,6 +12,13 @@ export class EventsService {
   constructor(private httpClient: HttpClient) { }
 
   public getUserEvents(userId: number): Observable<EventResponseDTO[]>{
+    const observable = this.httpClient.get<EventResponseDTO[]>(`http://localhost:5171/api/Events/user/${userId}`);
+
+    // Logowanie danych do konsoli
+    observable.subscribe({
+      next: (data) => console.log('Dane z API:', data),
+      error: (err) => console.error('Błąd podczas pobierania danych:', err)
+    });
     return this.httpClient.get<EventResponseDTO[]>(`http://localhost:5171/api/Events/user/${userId}`);
   }
 

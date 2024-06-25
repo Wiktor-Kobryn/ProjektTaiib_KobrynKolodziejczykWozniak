@@ -16,14 +16,11 @@ import { TokenService } from '../token.service';
   styleUrl: './events.component.css'
 })
 export class EventsComponent {
-  
-  ngOnInit(): void {
-    if(this.apiToken.getToken()=="") this.router.navigateByUrl("login");
-  }
+
 
     //ZMIENIC POTEM JEDYNKI NA USERID POBRANE Z AUTORYZACJI
-    private readonly apiToken = inject(TokenService);
-    public currentUser: number = 8;
+
+    public currentUser: number = 1004;
     public events: EventResponseDTO[] = [];
     public eventSizeOfContributors = new Map<EventResponseDTO, number>();
     public eventCreators = new Map<EventResponseDTO, number>();
@@ -33,16 +30,23 @@ export class EventsComponent {
       type: EventType.activity
     }
   
-    constructor(private eventsService: EventsService, private router: Router) {
+    constructor(private eventsService: EventsService, private router: Router, private apiToken: TokenService) {
+      if(this.apiToken.getToken()=="") this.router.navigateByUrl("login");
       this.currentUser = this.apiToken.decode();
+      console.log("ID" + this.currentUser);
+      this.eventRequest.userId=this.currentUser;
       this.getEvents();
+
 
     }
   
+
     private readonly groupsApi = inject(GroupsService);
   
     public onPaginationSubmit(): void {
       this.getEvents();
+      console.log("Log" + this.events.length)
+
     }
   
     private getEvents(): void {
@@ -62,16 +66,18 @@ export class EventsComponent {
         this.events = Array.from(eventsMap.values());
         console.log(this.events);
         this.getContributorsSize();
+    
+        console.log("Log getEvents" + this.events.length);
       });
-      
     }
+    
   
     private getEventsByUser(): Observable<EventResponseDTO[]> {
       return this.eventsService.getUserEvents(this.currentUser);
     }
   
     private getEventsByGroup(): Observable<EventResponseDTO[]> {
-      return this.groupsApi.getUserGroups(1).pipe(
+      return this.groupsApi.getUserGroups(this.currentUser).pipe(
         switchMap((groups: GroupResponseDTO[]) => {
           const observables: Observable<EventResponseDTO[]>[] = [];
           groups.forEach(group => {
