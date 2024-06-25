@@ -37,8 +37,8 @@ builder.Services.AddAuthentication(opt =>
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "https://localhost:5171",
-                    ValidAudience = "https://localhost:4200",
+                    ValidIssuer = "http://localhost:5171",
+                    ValidAudience = "http://localhost:4200",
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authentication"))
                 };
             });
@@ -66,11 +66,8 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
-app.UseCors(optBuilder => optBuilder
-                    .AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .AllowAnyOrigin()
-                    .Build());
+app.UseCors("test");
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

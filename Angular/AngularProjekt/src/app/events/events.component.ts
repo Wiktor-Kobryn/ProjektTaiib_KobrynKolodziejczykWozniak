@@ -16,6 +16,11 @@ import { TokenService } from '../token.service';
   styleUrl: './events.component.css'
 })
 export class EventsComponent {
+  
+  ngOnInit(): void {
+    if(this.apiToken.getToken()=="") this.router.navigateByUrl("login");
+  }
+
     //ZMIENIC POTEM JEDYNKI NA USERID POBRANE Z AUTORYZACJI
     private readonly apiToken = inject(TokenService);
     public currentUser: number = 8;

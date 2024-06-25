@@ -1,51 +1,49 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { UserResponseDTO } from './model/user.interface';
-import { P } from '@angular/cdk/keycodes';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { jwtDecode } from 'jwt-decode';
 import { TokenService } from './token.service';
 import { Router } from '@angular/router';
+import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'AngularProjekt';
   user!: UserResponseDTO;
-    public readonly apiToken = inject(TokenService);
-    private readonly apiUser = inject(UserService);
-    private readonly jwtHelper = inject(JwtHelperService);
-    
-    constructor(private router: Router) {
-      // Check if the user is authenticated on component initialization
-      if (this.isUserAuthenticated()) {
-        //this.apiUser.getUser(1).subscribe({
-       //   next: (res) => {
-         //   this.user = res;
-        //  }
-       // });
-      }
-    }
+  public isLoggedIn: boolean = false;
 
-  isUserAuthenticated() {
+  public readonly apiToken = inject(TokenService);
+  private readonly apiUser = inject(UserService);
+  private readonly jwtHelper = inject(JwtHelperService);
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    if (!this.isUserAuthenticated()) {
+      this.router.navigate(["/login"]);
+    } else {
+      
+    }
+  }
+
+  
+  isUserAuthenticated(): boolean {
     const token: string | null = localStorage.getItem("jwt");
-    if(token && !this.jwtHelper.isTokenExpired(token)) {
+    if (token && !this.jwtHelper.isTokenExpired(token) && token != "") {
+      this.isLoggedIn = true;
       this.apiToken.setToken(token);
       return true;
     }
-    else{
-      return false;
-    }
+    return false;
   }
-
-  logOut() {
+  logOut(): void {
     localStorage.removeItem("jwt");
-    location.reload();
-    this.router.navigate(["/login"]);  // Navigate to sign-up page
-
+    this.apiToken.setToken("");
+    this.isLoggedIn =false;
+    this.router.navigate(["/login"]);
   }
-
 }

@@ -8,6 +8,7 @@ import { formatDate } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { UserChangeDialogComponent } from '../user-change-dialog/user-change-dialog.component';
 import { TokenService } from '../token.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-profile',
@@ -17,16 +18,20 @@ import { TokenService } from '../token.service';
 export class ProfileComponent {
   // tymczasowy użytkownik - zmienić po dodaniu JWT !!!
   public currentUserID: number = 1;
-  private readonly apiToken = inject(TokenService);
+  //private readonly apiToken = inject(TokenService);
 
   public user!: UserResponseDTO;
   public eventTasks: EventTaskResponseDTO[] = [];
   public friends: UserResponseDTO[] = [];
   public today: Date = new Date();
 
-  constructor(private route: ActivatedRoute, private userService: UserService,
-    private eventTasksService: EventTasksService, private router: Router, private dialog: MatDialog) {
+  constructor(private apiToken: TokenService, private route: ActivatedRoute, private userService: UserService,
+    private eventTasksService: EventTasksService, private router: Router, private dialog: MatDialog, private app: AppComponent) {
 
+  }
+
+  ngOnInit(): void {
+    if(this.apiToken.getToken()=="") this.router.navigateByUrl("login");
     this.getCurrentUser();
   }
 
@@ -41,6 +46,8 @@ export class ProfileComponent {
         next: (res) => {
           this.user = res;
           this.getUserEventTasks();
+          console.log("Loguje sie na "+ this.eventTasks);
+          this.app.user=res;
           this.getUserFriends();
         },
         error: (err) => console.log('Error fetching logged user: ', err)
@@ -49,6 +56,7 @@ export class ProfileComponent {
   }
 
   private getUserEventTasks() {
+    console.log(this.apiToken.decodedToken);
     this.eventTasksService.getUserEventTasks(this.currentUserID).subscribe({
       next: (res) => {
         this.eventTasks = res;

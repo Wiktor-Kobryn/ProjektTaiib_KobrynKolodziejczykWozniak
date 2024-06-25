@@ -8,12 +8,12 @@
   </div>
   <div class="nav-center">
     <div class="nav-logo">
-      <mat-icon class="nav-logo-icon">event_available</mat-icon> 
+      <mat-icon class="nav-logo-icon">event_available</mat-icon>
       <span class="logo-text">CheckChart</span>
     </div>
   </div>
-  <div class="nav-right">
-    <img [src]="" alt="User Avatar" class="nav-avatar"> <!-- Tutaj usuwam avatara bo nie wiem jak tokenem -->
+  <div class="nav-right" *ngIf="isLoggedIn">
+    <img *ngIf="user?.image" [src]="user.image" alt="User Avatar" class="nav-avatar">
     <mat-icon class="nav-logout-icon" (click)="logOut()">logout</mat-icon>
   </div>
 </nav>

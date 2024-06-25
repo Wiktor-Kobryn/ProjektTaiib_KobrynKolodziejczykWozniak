@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
+import { AppComponent } from '../app.component';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +14,16 @@ export class LoginComponent implements OnInit {
   invalidLogin: boolean = false;
   firstTimeLogin: boolean = true;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private apiToken: TokenService,private http: HttpClient, private router: Router, private app: AppComponent) { }
 
   ngOnInit(): void {
+    localStorage.removeItem("jwt");
+    this.apiToken.setToken("");
+    console.log(this.apiToken);
+    console.log("Usuwam JWT"+  localStorage.getItem("jwt"));
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (event.url === '/login' && this.firstTimeLogin) {
-          location.reload();
           this.firstTimeLogin = false;
         }
       }
@@ -35,17 +40,23 @@ export class LoginComponent implements OnInit {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
-    }).subscribe(response => {
-      const token = (<any>response).token;
+    }).subscribe( { 
+      next: (res)  =>{
+      const token = (<any>res).token;
       console.log("Token received:", token);
       localStorage.setItem("jwt", token.toString());  
       this.invalidLogin = false;
-      console.log("Logged");
-    }, err => {
-      this.invalidLogin = true;  // Show invalid login message on error
-    });
-    if(!this.invalidLogin)
-    this.router.navigate(["/profile"]);  
+      this.app.isLoggedIn = true;
+     // console.log("Logged");
+     this.apiToken.setToken(token);
+     
+      if(!this.invalidLogin)
+      this.router.navigate(["/profile"]); 
+    }
+  }
+  
+    );
+ 
 
   }
 

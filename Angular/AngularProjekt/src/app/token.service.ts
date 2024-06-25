@@ -10,21 +10,23 @@ export class TokenService {
   decodedToken: any;
   constructor() {}
 
-  setToken(token: string) {
+  setToken(token: string ) {
     this.token = token;
   }
-
+  getToken(): string {
+      return this.token;
+  }
   decode(): number{
     this.decodedToken = jwtDecode(this.token);
     const userID = this.decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
-    console.log("Extracted userID: ", userID);
-
+    //console.log("Extracted userID: ", userID);
     return parseInt(userID);
   }
 
   isAdmin(): boolean{
     this.decodedToken = jwtDecode(this.token);
     const type = this.decodedToken["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]
+    console.log("Extracted Role: ", type);
     if(type=="admin") return true;
     else return false;
   }

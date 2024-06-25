@@ -41,10 +41,16 @@ namespace API.Controllers
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Role, "admin"),
                     new Claim(ClaimTypes.NameIdentifier, matchingUser.Id.ToString())
                 };
-
+                if (matchingUser.IsAdmin)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, "admin"));
+                }
+                else
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, "nieadmin"));
+                }
                 var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authentication"));
                 var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
                 var tokenOptions = new JwtSecurityToken(
