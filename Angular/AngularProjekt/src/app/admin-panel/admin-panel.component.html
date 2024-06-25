@@ -1,11 +1,11 @@
 <div class="admin-panel">
     <h1>Admin Panel</h1>
     <div class="users-list">
-      <h2>All Users</h2>
       <ul>
-        <li *ngFor="let user of users">
-          {{ user.name }} 
-        </li>
+        <li>Liczba użytkowników strony: {{ liczbauserow }}</li>
+        <li>Liczba użytkowników utworzonych w tym tygodniu: {{ usersCreatedInLastWeek.length }}</li>
+        <li>Liczba Eventów na stronie: {{ listyTasks.length }}</li>
+        <li>Liczba Eventów utworzonych w ostatnim tygodniu: {{liczbaTask}} </li>
       </ul>
     </div>
   </div>
