@@ -1,22 +1,20 @@
 <div class="container">
-
-    <main>
-      <div class="intro">
-        <h2>Organize your work</h2>
-        <h2>Organize your time</h2>
-        <h2>Organize your life</h2>
-      </div>
-      <div class="sign-in">
-        <h3>Sign In</h3>
-        <form>
-          <label for="login">Login</label>
-          <input type="text" id="login" name="login" value="TheRock9">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" value="******">
-          <button type="submit">Sign In</button>
-        </form>
-        <button class="sign-up">Sign Up</button>
-      </div>
-    </main>
-  </div>
-  
+  <main>
+    <div class="intro">
+      <h2>Organize your work</h2>
+      <h2>Organize your time</h2>
+      <h2>Organize your life</h2>
+    </div>
+    <div class="sign-in">
+      <h3>Sign In</h3>
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <label for="login">Login</label>
+        <input type="text" id="login" name="login" ngModel class="form-control" placeholder="Login">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password">
+        <button type="submit">Sign In</button>
+      </form>
+      <button class="sign-up" (click)="signUp()">Sign Up</button>
+    </div>
+  </main>
+</div>

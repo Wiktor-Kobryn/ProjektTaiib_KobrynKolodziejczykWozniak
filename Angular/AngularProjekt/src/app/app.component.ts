@@ -14,17 +14,16 @@ import { TokenService } from './token.service';
 export class AppComponent {
   title = 'AngularProjekt';
   user!: UserResponseDTO;
-
-  constructor(private apiUser: UserService, private jwtHelper: JwtHelperService) {
-    this.apiUser.getUser(1).subscribe({
-      next: (res) => {
-        this.user = res;
+    public readonly apiToken = inject(TokenService);
+    private readonly apiUser = inject(UserService);
+    private readonly jwtHelper = inject(JwtHelperService);
+    
+    constructor() {
+      // Check if the user is authenticated on component initialization
+      if (this.isUserAuthenticated()) {
+    
       }
-    })
-  }
- public readonly apiToken = inject(TokenService);
-
-  
+    }
 
   isUserAuthenticated() {
     const token: string | null = localStorage.getItem("jwt");

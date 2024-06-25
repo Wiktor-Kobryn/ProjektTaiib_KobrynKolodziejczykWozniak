@@ -17,6 +17,8 @@ export class TokenService {
   decode(): number{
     this.decodedToken = jwtDecode(this.token);
     const userID = this.decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
+    console.log("Extracted userID: ", userID);
+
     return parseInt(userID);
   }
 

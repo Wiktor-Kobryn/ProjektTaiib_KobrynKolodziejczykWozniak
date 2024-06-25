@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UserResponseDTO } from '../model/user.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
@@ -7,6 +7,7 @@ import { EventTaskResponseDTO } from '../model/event-task.interface';
 import { formatDate } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { UserChangeDialogComponent } from '../user-change-dialog/user-change-dialog.component';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-profile',
@@ -21,6 +22,7 @@ export class ProfileComponent {
   public eventTasks: EventTaskResponseDTO[] = [];
   public friends: UserResponseDTO[] = [];
   public today: Date = new Date();
+  private readonly apiToken = inject(TokenService);
 
   constructor(private route: ActivatedRoute, private userService: UserService,
     private eventTasksService: EventTasksService, private router: Router, private dialog: MatDialog) {
@@ -31,7 +33,9 @@ export class ProfileComponent {
   private getCurrentUser(): void {
 
     //tu pobranie ID uzytkownika z tokenu JWT !!!
-
+    console.log(this.apiToken);
+    this.currentUserID = this.apiToken.decode();
+    console.log(this.currentUserID);
     if(this.currentUserID != null) {
       this.userService.getUser(this.currentUserID).subscribe({
         next: (res) => {
