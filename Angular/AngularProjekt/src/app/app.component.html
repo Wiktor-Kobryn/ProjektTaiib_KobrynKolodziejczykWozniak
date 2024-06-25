@@ -14,7 +14,7 @@
   </div>
   <div class="nav-right">
     <img [src]="" alt="User Avatar" class="nav-avatar"> <!-- Tutaj usuwam avatara bo nie wiem jak tokenem -->
-    <mat-icon class="nav-logout-icon">logout</mat-icon>
+    <mat-icon class="nav-logout-icon" (click)="logOut()">logout</mat-icon>
   </div>
 </nav>
 <router-outlet></router-outlet>

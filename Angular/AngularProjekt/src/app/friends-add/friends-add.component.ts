@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UserResponseDTO } from '../model/user.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-friends-add',
@@ -11,6 +12,7 @@ import { UserService } from '../user.service';
 export class FriendsAddComponent {
   // tymczasowy użytkownik - zmienić po dodaniu JWT !!!
   public currentUserID: number = 10;
+  private readonly apiToken = inject(TokenService);
 
   public user!: UserResponseDTO;
   public friends: UserResponseDTO[] = [];
@@ -19,14 +21,13 @@ export class FriendsAddComponent {
 
   constructor(private route: ActivatedRoute, private userService: UserService,
     private router: Router) {
-
     this.getCurrentUser();
   }
 
   private getCurrentUser(): void {
 
     //tu pobranie ID uzytkownika z tokenu JWT !!!
-
+    this.currentUserID = this.apiToken.decode();
     if(this.currentUserID != null) {
       this.userService.getUser(this.currentUserID).subscribe({
         next: (res) => {

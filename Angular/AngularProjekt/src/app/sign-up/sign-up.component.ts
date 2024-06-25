@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +12,7 @@ export class SignUpComponent {
   password: string = '';
   repeatPassword: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
     if (this.password !== this.repeatPassword) {
@@ -21,13 +22,17 @@ export class SignUpComponent {
 
     const user = {
       login: this.login,
-      password: this.password
+      password: this.password,
+      name: this.login,
+      image: "crabV1.jpg",
+      isAdmin: false
     };
 
     this.http.post('http://localhost:5171/api/Users', user)
       .subscribe(response => {
         console.log('User created successfully', response);
         alert('User created successfully');
+        this.router.navigate(["/login"]);
       }, error => {
         console.error('Error creating user', error);
         alert('Error creating user');

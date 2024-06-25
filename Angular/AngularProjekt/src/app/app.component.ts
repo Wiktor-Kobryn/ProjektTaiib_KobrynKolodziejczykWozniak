@@ -5,6 +5,7 @@ import { P } from '@angular/cdk/keycodes';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { jwtDecode } from 'jwt-decode';
 import { TokenService } from './token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,14 @@ export class AppComponent {
     private readonly apiUser = inject(UserService);
     private readonly jwtHelper = inject(JwtHelperService);
     
-    constructor() {
+    constructor(private router: Router) {
       // Check if the user is authenticated on component initialization
       if (this.isUserAuthenticated()) {
-    
+        //this.apiUser.getUser(1).subscribe({
+       //   next: (res) => {
+         //   this.user = res;
+        //  }
+       // });
       }
     }
 
@@ -38,6 +43,9 @@ export class AppComponent {
 
   logOut() {
     localStorage.removeItem("jwt");
+    location.reload();
+    this.router.navigate(["/login"]);  // Navigate to sign-up page
+
   }
 
 }

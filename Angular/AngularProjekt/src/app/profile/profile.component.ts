@@ -17,12 +17,12 @@ import { TokenService } from '../token.service';
 export class ProfileComponent {
   // tymczasowy użytkownik - zmienić po dodaniu JWT !!!
   public currentUserID: number = 1;
+  private readonly apiToken = inject(TokenService);
 
   public user!: UserResponseDTO;
   public eventTasks: EventTaskResponseDTO[] = [];
   public friends: UserResponseDTO[] = [];
   public today: Date = new Date();
-  private readonly apiToken = inject(TokenService);
 
   constructor(private route: ActivatedRoute, private userService: UserService,
     private eventTasksService: EventTasksService, private router: Router, private dialog: MatDialog) {

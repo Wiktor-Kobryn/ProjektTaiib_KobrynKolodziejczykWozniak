@@ -8,6 +8,7 @@ import { Observable, forkJoin, map, switchMap } from 'rxjs';
 import { useAnimation } from '@angular/animations';
 import { EventType } from '../model/eventType.interface';
 import { EventRequestDTO } from '../model/eventRequest.interface';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-events',
@@ -16,6 +17,7 @@ import { EventRequestDTO } from '../model/eventRequest.interface';
 })
 export class EventsComponent {
     //ZMIENIC POTEM JEDYNKI NA USERID POBRANE Z AUTORYZACJI
+    private readonly apiToken = inject(TokenService);
     public currentUser: number = 8;
     public events: EventResponseDTO[] = [];
     public eventSizeOfContributors = new Map<EventResponseDTO, number>();
@@ -27,7 +29,9 @@ export class EventsComponent {
     }
   
     constructor(private eventsService: EventsService, private router: Router) {
+      this.currentUser = this.apiToken.decode();
       this.getEvents();
+
     }
   
     private readonly groupsApi = inject(GroupsService);
