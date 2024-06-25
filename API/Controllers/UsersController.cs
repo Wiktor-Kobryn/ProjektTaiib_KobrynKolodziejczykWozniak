@@ -80,6 +80,7 @@ namespace API.Controllers
         public void AddUser([FromBody] UserRequestDTO userRequest)
         {
             userService.AddUser(userRequest);
+            
         }
 
         [HttpGet("{id}/NonFriends")]

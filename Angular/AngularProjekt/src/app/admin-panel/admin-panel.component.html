@@ -1,1 +1,12 @@
-<p>admin-panel works!</p>
+<div class="admin-panel">
+    <h1>Admin Panel</h1>
+    <div class="users-list">
+      <h2>All Users</h2>
+      <ul>
+        <li *ngFor="let user of users">
+          {{ user.name }} 
+        </li>
+      </ul>
+    </div>
+  </div>
+  

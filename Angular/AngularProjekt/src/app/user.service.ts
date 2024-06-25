@@ -14,6 +14,9 @@ export class UserService {
   public getUserFriends(userId: number): Observable<UserResponseDTO[]> {
     return this.httpClient.get<UserResponseDTO[]>(`http://localhost:5171/api/Users/UserFriends/${userId}`)
   }
+  public getUsers(userId: number): Observable<UserResponseDTO[]> {
+    return this.httpClient.get<UserResponseDTO[]>(`http://localhost:5171/api/Users`)
+  }
 
   public getUserNonFriends(userId: number): Observable<UserResponseDTO[]> {
     return this.httpClient.get<UserResponseDTO[]>(`http://localhost:5171/api/Users/${userId}/NonFriends`)

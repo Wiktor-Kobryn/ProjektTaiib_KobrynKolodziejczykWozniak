@@ -16,5 +16,6 @@ namespace BLL.ResponseDTO
         public string Name { get; init; }
         public string Image { get; init; }
         public bool IsAdmin { get; init; }
+        public DateTime Data { get; set; }
     }
 }

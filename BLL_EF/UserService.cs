@@ -172,7 +172,8 @@ namespace BLL_EF
                 Name = userRequest.Name,
                 Password = Krypto.GetHashString(userRequest.Password), // HASHOWANIE HASŁA - KAROL !!! // ;)
                 IsAdmin = userRequest.IsAdmin,
-                Image = userRequest.Image
+                Image = userRequest.Image,
+                CreationDate = DateTime.Now
             };
             db.Users.Add(user);
             db.SaveChanges();

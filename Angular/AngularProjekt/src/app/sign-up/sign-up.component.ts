@@ -25,7 +25,8 @@ export class SignUpComponent {
       password: this.password,
       name: this.login,
       image: "crabV1.jpg",
-      isAdmin: false
+      isAdmin: false,
+      Date:  new Date().toISOString()
     };
 
     this.http.post('http://localhost:5171/api/Users', user)
