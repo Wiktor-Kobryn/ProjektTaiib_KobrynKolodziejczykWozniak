@@ -14,13 +14,13 @@ export class LoginComponent implements OnInit {
   invalidLogin: boolean = false;
   firstTimeLogin: boolean = true;
 
-  constructor(private apiToken: TokenService,private http: HttpClient, private router: Router, private app: AppComponent) { }
+  constructor(private apiToken: TokenService, private http: HttpClient, private router: Router, private app: AppComponent) { }
 
   ngOnInit(): void {
     localStorage.removeItem("jwt");
     this.apiToken.setToken("");
     console.log(this.apiToken);
-    console.log("Usuwam JWT"+  localStorage.getItem("jwt"));
+    console.log("Usuwam JWT" + localStorage.getItem("jwt"));
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (event.url === '/login' && this.firstTimeLogin) {
@@ -40,24 +40,22 @@ export class LoginComponent implements OnInit {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
-    }).subscribe( { 
-      next: (res)  =>{
-      const token = (<any>res).token;
-      console.log("Token received:", token);
-      localStorage.setItem("jwt", token.toString());  
-      this.invalidLogin = false;
-      this.app.isLoggedIn = true;
-     // console.log("Logged");
-     this.apiToken.setToken(token);
-     
-      if(!this.invalidLogin)
-      this.router.navigate(["/profile"]); 
-    }
-  }
-  
-    );
- 
-
+    }).subscribe({
+      next: (res) => {
+        const token = (<any>res).token;
+        console.log("Token received:", token);
+        localStorage.setItem("jwt", token.toString());
+        this.invalidLogin = false;
+        this.app.isLoggedIn = true;
+        this.apiToken.setToken(token);
+        this.router.navigate(["/profile"]);
+      },
+      error: (err) => {
+        console.error("Login error:", err);
+        this.invalidLogin = true;
+        alert("Invalid username or password. Please try again.");
+      }
+    });
   }
 
   signUp() {

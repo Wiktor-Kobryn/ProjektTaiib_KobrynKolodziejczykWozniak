@@ -34,7 +34,8 @@ namespace API.Controllers
                 return BadRequest("Invalid client request");
             }
             var u = db.Users.Where(u => u.Login == user.Username);
-            User matchingUser = u.First();
+            User matchingUser = u.FirstOrDefault();
+            if (matchingUser == null) return null;
             Console.Write("Szukam " + matchingUser.Login);
             
             if (user.Username == matchingUser.Login && Krypto.GetHashString(user.Password) == matchingUser.Password)
